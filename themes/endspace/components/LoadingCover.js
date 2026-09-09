@@ -240,7 +240,7 @@ export const LoadingCover = () => {
           left: 0;
           width: 100%;
           height: var(--progress);
-          background: #FBFB46;
+          background: var(--endspace-accent-yellow);
           transition: height 0.05s linear;
         }
 
@@ -262,7 +262,7 @@ export const LoadingCover = () => {
           font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
           font-size: clamp(32px, 5vw, 48px);
           font-weight: 700;
-          color: #FBFB46;
+          color: var(--endspace-accent-yellow);
           letter-spacing: 2px;
           line-height: 1;
         }
@@ -276,7 +276,7 @@ export const LoadingCover = () => {
         .status-dot {
           width: 6px;
           height: 6px;
-          background: #FBFB46;
+          background: var(--endspace-accent-yellow);
           border-radius: 50%;
           animation: blink 0.8s ease-in-out infinite;
         }
@@ -285,7 +285,8 @@ export const LoadingCover = () => {
           font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
           font-size: 11px;
           font-weight: 500;
-          color: rgba(251, 251, 70, 0.8);
+          color: var(--endspace-accent-yellow);
+          opacity: 0.8;
           letter-spacing: 2px;
           text-transform: uppercase;
         }
@@ -297,7 +298,7 @@ export const LoadingCover = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background: #FBFB46;
+          background: var(--endspace-accent-yellow);
           transform: scaleX(0);
           transform-origin: left;
           pointer-events: none;
