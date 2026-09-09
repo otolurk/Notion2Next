@@ -15,9 +15,9 @@ export const Style = () => {
       :root {
         /* Ethereal Whites & Grays */
         --endspace-bg-base-light: #fafafa;
-        --endspace-bg-base-dark: #09090b;
+        --endspace-bg-base-dark: #222222;
         --endspace-bg-primary-light: #ffffff;
-        --endspace-bg-primary-dark: #18181b;
+        --endspace-bg-primary-dark: #2b2b2b;
         --endspace-bg-base: #fafafa;
         --endspace-bg-primary: #ffffff;
         --endspace-bg-secondary: #f4f4f5;
@@ -25,26 +25,26 @@ export const Style = () => {
 
         /* Dark Text (High Contrast) */
         --endspace-text-primary-light: #18181b;
-        --endspace-text-primary-dark: #f4f4f5;
+        --endspace-text-primary-dark: #f2f2f2;
         --endspace-text-secondary-light: #52525b;
-        --endspace-text-secondary-dark: #d4d4d8;
+        --endspace-text-secondary-dark: #c2c2c2;
         --endspace-text-primary: #18181b;
         --endspace-text-secondary: #52525b;
         --endspace-text-muted: #a1a1aa;
 
         /* Accents (Subtle Industrialism) -> Converted to Yellow Suite */
         --endspace-accent-yellow-light: #FBFB45;
-        --endspace-accent-yellow-dark: #fef08a;
+        --endspace-accent-yellow-dark: #BFFF00;
         --endspace-accent-yellow: #FBFB45;
         --endspace-accent-yellow-dim-light: rgba(251, 251, 69, 0.15);
-        --endspace-accent-yellow-dim-dark: rgba(254, 240, 138, 0.18);
+        --endspace-accent-yellow-dim-dark: rgba(191, 255, 0, 0.15);
         --endspace-accent-yellow-dim: rgba(251, 251, 69, 0.15);
         --endspace-accent-cyan: #FBFB45; /* OVERRIDE: Cyan usage -> Yellow 500 */
         --endspace-accent-cyan-dim: rgba(251, 251, 69, 0.1); /* OVERRIDE: Cyan dim -> Yellow dim */
 
         /* Borders & Lines */
         --endspace-border-base-light: #e4e4e7;
-        --endspace-border-base-dark: #3f3f46;
+        --endspace-border-base-dark: #454545;
         --endspace-border-base: #e4e4e7;
         --endspace-border-active: #FBFB45; /* Active border -> Yellow */
         --endspace-grid-color: rgba(0,0,0,0.03);
@@ -81,17 +81,20 @@ export const Style = () => {
          Global Base Styles
          ============================================ */
       .dark #theme-endspace {
+        color-scheme: dark;
         --endspace-bg-base: var(--endspace-bg-base-dark);
         --endspace-bg-primary: var(--endspace-bg-primary-dark);
-        --endspace-bg-secondary: #27272a;
-        --endspace-bg-tertiary: #3f3f46;
+        --endspace-bg-secondary: #333333;
+        --endspace-bg-tertiary: #404040;
         --endspace-text-primary: var(--endspace-text-primary-dark);
         --endspace-text-secondary: var(--endspace-text-secondary-dark);
-        --endspace-text-muted: #a1a1aa;
+        --endspace-text-muted: #9a9a9a;
         --endspace-border-base: var(--endspace-border-base-dark);
         --endspace-accent-yellow: var(--endspace-accent-yellow-dark);
         --endspace-accent-yellow-dim: var(--endspace-accent-yellow-dim-dark);
-        --endspace-grid-color: rgba(255, 255, 255, 0.04);
+        --endspace-accent-cyan: var(--endspace-accent-yellow-dark);
+        --endspace-accent-cyan-dim: var(--endspace-accent-yellow-dim-dark);
+        --endspace-grid-color: rgba(191, 255, 0, 0.04);
       }
 
       #theme-endspace {
@@ -717,13 +720,13 @@ export const Style = () => {
 
       .ef-button:hover {
         background: var(--endspace-border-active);
-        color: white;
+        color: #0a0a0a;
         border-color: var(--endspace-border-active);
       }
 
       .ef-button:hover::before {
         height: 70%;
-        background-color: #FBFB45;
+        background-color: var(--endspace-accent-yellow);
       }
 
       /* ============================================
@@ -892,7 +895,7 @@ export const Style = () => {
         left: 0;
         width: 0%;
         height: 100%;
-        background: #E0E0E0; /* Hover: Darker Grey */
+        background: var(--endspace-bg-tertiary); /* Hover: adaptive grey */
         transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         z-index: -1;
       }
@@ -1005,7 +1008,7 @@ export const Style = () => {
       /* Active State: Always full width with Distinct Color */
       .nier-nav-item.active::before {
         width: 100%;
-        background: #EBEBEB; /* Active: Lighter Grey */
+        background: var(--endspace-bg-tertiary); /* Active: adaptive grey */
       }
 
       /* Target the icon specifically if needed to ensure color fill */
@@ -1074,7 +1077,7 @@ export const Style = () => {
         display: block;
         width: 4px;
         height: 18px;
-        background-color: #FBFB45; /* Yellow */
+        background-color: var(--endspace-accent-yellow); /* Accent */
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Rectangle */
       }
@@ -1082,7 +1085,7 @@ export const Style = () => {
       .ef-btn:hover .ef-btn-indicator {
         width: 12px;
         height: 12px;
-        background-color: #FBFB45;
+        background-color: var(--endspace-accent-yellow);
         clip-path: polygon(0 0, 100% 50%, 0 100%); /* Triangle */
       }
 
@@ -1101,8 +1104,8 @@ export const Style = () => {
       }
 
       .archive-filter-btn:hover {
-        background-color: #FBFB46 !important;
-        border-color: #FBFB46;
+        background-color: var(--endspace-accent-yellow) !important;
+        border-color: var(--endspace-accent-yellow);
         box-shadow: var(--endspace-shadow-hover);
       }
 
@@ -1112,6 +1115,99 @@ export const Style = () => {
 
       .archive-filter-btn:hover .ef-btn-text {
         color: #000 !important;
+      }
+
+      /* ============================================
+         Dark Mode 矫正层
+         组件里存在大量硬编码的浅色 Tailwind 工具类
+         （bg-white / bg-gray-* / text-gray-* / border-gray-* /
+          旧强调黄 #FBFB46），夜间模式下统一矫正：
+         - 浅色底 → 深色面板
+         - 灰字 → 提亮
+         - 旧黄 → 荧光绿 #BFFF00
+         注意：text-black / bg-black 不动 ——
+         text-black 总是和荧光绿底配对（黑字绿底对比最好），
+         bg-black/40 是图片遮罩，改了会变成实心色块
+         ============================================ */
+      .dark #theme-endspace [class*='bg-white'] {
+        background-color: #2e2e2e !important;
+      }
+      .dark #theme-endspace [class*='bg-gray-100'] {
+        background-color: #262626 !important;
+      }
+      .dark #theme-endspace [class*='bg-gray-200'] {
+        background-color: #343434 !important;
+      }
+      .dark #theme-endspace [class*='bg-gray-300'] {
+        background-color: #404040 !important;
+      }
+      .dark #theme-endspace [class*='bg-gray-400'] {
+        background-color: #3d3d3d !important;
+      }
+      .dark #theme-endspace [class*='bg-[#d4d4d8]'] {
+        background-color: #404040 !important;
+      }
+      .dark #theme-endspace [class*='border-gray-'] {
+        border-color: #454545 !important;
+      }
+      .dark #theme-endspace [class*='text-gray-300'] {
+        color: #cfcfcf !important;
+      }
+      .dark #theme-endspace [class*='text-gray-400'],
+      .dark #theme-endspace [class*='text-gray-500'],
+      .dark #theme-endspace [class*='text-gray-600'],
+      .dark #theme-endspace [class*='text-gray-700'] {
+        color: #a6a6a6 !important;
+      }
+      /* 旧强调黄 #FBFB46 → 荧光绿 #BFFF00（含 bg/border/text 三类） */
+      .dark #theme-endspace [class*='bg-[#FBFB46'] {
+        background-color: #bfff00 !important;
+      }
+      .dark #theme-endspace [class*='border-[#FBFB46'] {
+        border-color: #bfff00 !important;
+      }
+      .dark #theme-endspace [class*='text-[#FBFB46'] {
+        color: #bfff00 !important;
+      }
+      /* ef-btn 悬停底色在夜间提亮一档 */
+      .dark #theme-endspace .ef-btn:hover {
+        background-color: #3d3d3d !important;
+      }
+
+      /* 侧边栏菜单图标：夜间用亮色/荧光绿代替黑色 */
+      .dark #theme-endspace .endspace-notion-menu-image {
+        filter: grayscale(1) brightness(1.9);
+      }
+      .dark #theme-endspace .endspace-notion-menu-image.is-active,
+      .dark #theme-endspace .nier-nav-item:hover .endspace-notion-menu-image {
+        filter: grayscale(1) brightness(2.6) saturate(0) !important;
+        opacity: 1 !important;
+      }
+      .dark #theme-endspace .endspace-notion-menu-class-icon,
+      .dark #theme-endspace .endspace-notion-menu-svg-icon,
+      .dark #theme-endspace .endspace-menu-icon-wrap,
+      .dark #theme-endspace .endspace-menu-icon-wrap i,
+      .dark #theme-endspace .endspace-menu-icon-wrap svg {
+        color: #9a9a9a;
+      }
+      .dark #theme-endspace .endspace-notion-menu-dot {
+        background: #9a9a9a;
+      }
+      .dark #theme-endspace .endspace-notion-menu-class-icon.is-active,
+      .dark #theme-endspace .nier-nav-item:hover .endspace-notion-menu-class-icon,
+      .dark #theme-endspace .endspace-notion-menu-svg-icon.is-active,
+      .dark #theme-endspace .nier-nav-item:hover .endspace-notion-menu-svg-icon,
+      .dark #theme-endspace .nier-nav-item:hover .endspace-menu-icon-wrap,
+      .dark #theme-endspace .nier-nav-item:hover .endspace-menu-icon-wrap i,
+      .dark #theme-endspace .nier-nav-item:hover .endspace-menu-icon-wrap svg,
+      .dark #theme-endspace .nier-nav-item.active .endspace-menu-icon-wrap,
+      .dark #theme-endspace .nier-nav-item.active .endspace-menu-icon-wrap i,
+      .dark #theme-endspace .nier-nav-item.active .endspace-menu-icon-wrap svg {
+        color: #bfff00 !important;
+      }
+      .dark #theme-endspace .endspace-notion-menu-dot.is-active,
+      .dark #theme-endspace .nier-nav-item:hover .endspace-notion-menu-dot {
+        background: #bfff00;
       }
 
       ${themeConsoleStyle('endspace', CONFIG)}
