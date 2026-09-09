@@ -8,6 +8,7 @@ import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { isBrowser } from '@/lib/utils'
 import { Transition } from '@headlessui/react'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
 import BlogListArchive from './components/BlogListArchive'
@@ -31,6 +32,13 @@ import CONFIG from './config'
 import { Style } from './style'
 import { IconLoader2 } from '@tabler/icons-react'
 
+// 准星光标（仅客户端加载，依赖 gsap）
+const TargetCursor = dynamic(() => import('./components/TargetCursor'), { ssr: false })
+
+/** 目标光标默认选择器 */
+const DEFAULT_CURSOR_TARGETS =
+  'a, button, [role="button"], .ef-btn, .endspace-button-primary, .cursor-target'
+
 /**
  * Endspace Theme - Endfield Style
  * Base layout framework
@@ -51,6 +59,9 @@ const LayoutBase = (props) => {
 
   // Loading animation
   const LOADING_COVER = siteConfig('ENDSPACE_LOADING_COVER', true, CONFIG)
+
+  // Target cursor (准星光标)
+  const TARGET_CURSOR = siteConfig('ENDSPACE_TARGET_CURSOR', true, CONFIG)
 
   // Viewport scale - Endfield style (using hook default params: 1920x1080 landscape / 390x844 portrait)
   useViewportScale()
@@ -146,6 +157,21 @@ const LayoutBase = (props) => {
         {/* Floating Controls (Unified) */}
         <FloatingControls toc={toc} {...props} />
       </div>
+
+      {/* Target Cursor (准星光标，portal 到 body) */}
+      {TARGET_CURSOR && (
+        <TargetCursor
+          targetSelector={siteConfig('ENDSPACE_CURSOR_TARGETS', DEFAULT_CURSOR_TARGETS, CONFIG)}
+          spinDuration={siteConfig('ENDSPACE_CURSOR_SPIN_DURATION', 2, CONFIG)}
+          hideDefaultCursor={siteConfig('ENDSPACE_CURSOR_HIDE_DEFAULT', true, CONFIG)}
+          hoverDuration={siteConfig('ENDSPACE_CURSOR_HOVER_DURATION', 0.2, CONFIG)}
+          parallaxOn={siteConfig('ENDSPACE_CURSOR_PARALLAX', true, CONFIG)}
+          cursorColor={siteConfig('ENDSPACE_CURSOR_COLOR', '#ffffff', CONFIG)}
+          cursorColorOnTarget={
+            siteConfig('ENDSPACE_CURSOR_COLOR_ON_TARGET', '', CONFIG) || undefined
+          }
+        />
+      )}
     </div>
   )
 }
