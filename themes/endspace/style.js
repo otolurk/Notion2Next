@@ -14,39 +14,39 @@ export const Style = () => {
          ============================================ */
       :root {
         /* Ethereal Whites & Grays */
-        --endspace-bg-base-light: #fafafa;
+        --endspace-bg-base-light: #F3F7EF;
         --endspace-bg-base-dark: #222222;
         --endspace-bg-primary-light: #ffffff;
         --endspace-bg-primary-dark: #2b2b2b;
-        --endspace-bg-base: #fafafa;
+        --endspace-bg-base: #F3F7EF;
         --endspace-bg-primary: #ffffff;
-        --endspace-bg-secondary: #f4f4f5;
-        --endspace-bg-tertiary: #e4e4e7;
+        --endspace-bg-secondary: #eaf0e4;
+        --endspace-bg-tertiary: #dde7d5;
 
         /* Dark Text (High Contrast) */
-        --endspace-text-primary-light: #18181b;
+        --endspace-text-primary-light: #1a2413;
         --endspace-text-primary-dark: #f2f2f2;
-        --endspace-text-secondary-light: #52525b;
+        --endspace-text-secondary-light: #4f5a45;
         --endspace-text-secondary-dark: #c2c2c2;
-        --endspace-text-primary: #18181b;
-        --endspace-text-secondary: #52525b;
-        --endspace-text-muted: #a1a1aa;
+        --endspace-text-primary: #1a2413;
+        --endspace-text-secondary: #4f5a45;
+        --endspace-text-muted: #8a9480;
 
-        /* Accents (Subtle Industrialism) -> Converted to Yellow Suite */
-        --endspace-accent-yellow-light: #FBFB45;
+        /* Accents (Subtle Industrialism) -> Light: #B6E23A / Dark: #BFFF00 */
+        --endspace-accent-yellow-light: #B6E23A;
         --endspace-accent-yellow-dark: #BFFF00;
-        --endspace-accent-yellow: #FBFB45;
-        --endspace-accent-yellow-dim-light: rgba(251, 251, 69, 0.15);
+        --endspace-accent-yellow: #B6E23A;
+        --endspace-accent-yellow-dim-light: rgba(182, 226, 58, 0.15);
         --endspace-accent-yellow-dim-dark: rgba(191, 255, 0, 0.15);
-        --endspace-accent-yellow-dim: rgba(251, 251, 69, 0.15);
-        --endspace-accent-cyan: #FBFB45; /* OVERRIDE: Cyan usage -> Yellow 500 */
-        --endspace-accent-cyan-dim: rgba(251, 251, 69, 0.1); /* OVERRIDE: Cyan dim -> Yellow dim */
+        --endspace-accent-yellow-dim: rgba(182, 226, 58, 0.15);
+        --endspace-accent-cyan: #B6E23A; /* OVERRIDE: Cyan usage -> Accent */
+        --endspace-accent-cyan-dim: rgba(182, 226, 58, 0.1); /* OVERRIDE: Cyan dim -> Accent dim */
 
         /* Borders & Lines */
-        --endspace-border-base-light: #e4e4e7;
+        --endspace-border-base-light: #dce5d5;
         --endspace-border-base-dark: #454545;
-        --endspace-border-base: #e4e4e7;
-        --endspace-border-active: #FBFB45; /* Active border -> Yellow */
+        --endspace-border-base: #dce5d5;
+        --endspace-border-active: #B6E23A; /* Active border -> Accent */
         --endspace-grid-color: rgba(0,0,0,0.03);
 
         /* Shadows - Enhanced 3D Depth */
@@ -164,11 +164,19 @@ export const Style = () => {
       }
 
       .endspace-search-highlight {
-        color: #a16207;
-        background: linear-gradient(90deg, rgba(251, 251, 69, 0.2), rgba(251, 191, 36, 0.35));
+        color: #1a2413;
+        background: linear-gradient(
+          90deg,
+          var(--endspace-accent-yellow-dim),
+          rgba(182, 226, 58, 0.35)
+        );
         padding: 0 0.25rem;
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
+      }
+
+      .dark #theme-endspace .endspace-search-highlight {
+        color: #f2f2f2;
       }
 
       .archive-section {
@@ -176,7 +184,7 @@ export const Style = () => {
       }
 
       .endspace-section-title {
-        color: #E8E8EA !important;
+        color: var(--endspace-text-primary) !important;
         width: 100%;
         gap: 1rem;
         margin-bottom: 1.5rem;
@@ -187,7 +195,7 @@ export const Style = () => {
 
       #theme-endspace .endspace-section-title,
       #theme-endspace .endspace-section-title * {
-        color: #E8E8EA !important;
+        color: var(--endspace-text-primary) !important;
       }
 
       .endspace-section-meta {
@@ -211,7 +219,7 @@ export const Style = () => {
       }
 
       .endspace-archive-heading-title {
-        color: #E8E8EA !important;
+        color: var(--endspace-text-primary) !important;
         position: relative;
         z-index: 10;
       }
@@ -485,7 +493,7 @@ export const Style = () => {
 
       .endspace-btn:hover {
         background: var(--endspace-border-active);
-        color: white;
+        color: #0a0a0a;
         transform: translateY(-1px);
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       }
@@ -493,7 +501,7 @@ export const Style = () => {
       .endspace-button-primary {
         background: var(--endspace-border-active);
         border: none;
-        color: white;
+        color: #0a0a0a;
         padding: 0.75rem 1.5rem;
         font-family: 'JetBrains Mono', monospace;
         font-weight: 700;
@@ -726,7 +734,7 @@ export const Style = () => {
 
       .ef-button:hover::before {
         height: 70%;
-        background-color: var(--endspace-accent-yellow);
+        background-color: #0a0a0a; /* 悬停底色是强调色，小条变黑保持可见 */
       }
 
       /* ============================================
@@ -1066,7 +1074,7 @@ export const Style = () => {
       }
 
       .ef-btn:hover {
-        background-color: #27272A !important; /* Hover: Darker Grey */
+        background-color: var(--endspace-accent-yellow) !important; /* Hover: Accent */
         border-radius: 3px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         transform: translateY(-1px);
@@ -1085,13 +1093,13 @@ export const Style = () => {
       .ef-btn:hover .ef-btn-indicator {
         width: 12px;
         height: 12px;
-        background-color: var(--endspace-accent-yellow);
+        background-color: #0a0a0a; /* 悬停底色是强调色，指示条变黑保持可见 */
         clip-path: polygon(0 0, 100% 50%, 0 100%); /* Triangle */
       }
 
       /* Text Styles */
       .ef-btn-text {
-        color: #e4e4e7 !important;
+        color: var(--endspace-text-secondary) !important;
         font-weight: 600;
         font-size: 0.95rem;
         letter-spacing: 0.05em;
@@ -1100,7 +1108,7 @@ export const Style = () => {
       }
 
       .ef-btn:hover .ef-btn-text {
-        color: #ffffff !important;
+        color: #0a0a0a !important;
       }
 
       .archive-filter-btn:hover {
@@ -1159,19 +1167,16 @@ export const Style = () => {
       .dark #theme-endspace [class*='text-gray-700'] {
         color: #a6a6a6 !important;
       }
-      /* 旧强调黄 #FBFB46 → 荧光绿 #BFFF00（含 bg/border/text 三类） */
-      .dark #theme-endspace [class*='bg-[#FBFB46'] {
-        background-color: #bfff00 !important;
+      /* 旧强调黄 #FBFB46 → 主题强调色（变量按日/夜自动解析）
+         放在矫正层之前、日夜通用 */
+      #theme-endspace [class*='bg-[#FBFB46'] {
+        background-color: var(--endspace-accent-yellow) !important;
       }
-      .dark #theme-endspace [class*='border-[#FBFB46'] {
-        border-color: #bfff00 !important;
+      #theme-endspace [class*='border-[#FBFB46'] {
+        border-color: var(--endspace-accent-yellow) !important;
       }
-      .dark #theme-endspace [class*='text-[#FBFB46'] {
-        color: #bfff00 !important;
-      }
-      /* ef-btn 悬停底色在夜间提亮一档 */
-      .dark #theme-endspace .ef-btn:hover {
-        background-color: #3d3d3d !important;
+      #theme-endspace [class*='text-[#FBFB46'] {
+        color: var(--endspace-accent-yellow) !important;
       }
 
       /* 侧边栏菜单图标：夜间用亮色/荧光绿代替黑色 */
