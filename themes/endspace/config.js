@@ -88,6 +88,26 @@ const CONFIG = {
   ENDSPACE_ARTICLE_ADJACENT: true, // 是否显示上一篇/下一篇文章导航
 
   // ============================================
+  // 光标 (Cursor)
+  // ============================================
+  /** 是否启用 TargetCursor 准星光标（旋转方块 + 悬停吸附四角） */
+  ENDSPACE_TARGET_CURSOR: true,
+  /** 触发吸附效果的目标元素选择器，留空则用组件默认值 */
+  ENDSPACE_CURSOR_TARGETS: 'a, button, [role="button"], .ef-btn, .endspace-button-primary, .cursor-target',
+  /** 空闲时旋转一圈的秒数 */
+  ENDSPACE_CURSOR_SPIN_DURATION: 2,
+  /** 是否隐藏系统原生光标（含主题内置的 SVG 箭头光标） */
+  ENDSPACE_CURSOR_HIDE_DEFAULT: true,
+  /** 悬停吸附动画时长（秒） */
+  ENDSPACE_CURSOR_HOVER_DURATION: 0.2,
+  /** 吸附后是否跟随鼠标做轻微视差 */
+  ENDSPACE_CURSOR_PARALLAX: true,
+  /** 光标颜色 */
+  ENDSPACE_CURSOR_COLOR: '#ffffff',
+  /** 悬停到目标上时的颜色，留空表示不变色 */
+  ENDSPACE_CURSOR_COLOR_ON_TARGET: '',
+
+  // ============================================
   // 浮动控件 (Floating controls)
   // ============================================
   /** 右下角胶囊是否显示浅色/深色切换（夜间模式已禁用） */
