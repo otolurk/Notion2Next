@@ -118,6 +118,20 @@ export const Style = () => {
         cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M2 2 L12 28 L16 18 L26 14 L2 2 Z' fill='%2362F0F5' stroke='%23000000' stroke-width='1.5' style='filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.3));'/%3E%3Ccircle cx='24' cy='24' r='4' fill='none' stroke='%2362F0F5' stroke-width='2'/%3E%3C/svg%3E") 2 2, pointer;
       }
 
+      /* Target Cursor 启用时屏蔽系统原生光标（含上面的 SVG 箭头光标）
+         文本输入类元素保留 text 光标 */
+      body.endspace-target-cursor-on,
+      body.endspace-target-cursor-on #theme-endspace,
+      body.endspace-target-cursor-on * {
+        cursor: none !important;
+      }
+      body.endspace-target-cursor-on input,
+      body.endspace-target-cursor-on textarea,
+      body.endspace-target-cursor-on select,
+      body.endspace-target-cursor-on [contenteditable='true'] {
+        cursor: text !important;
+      }
+
       /* Technical Grid Background */
       #theme-endspace::before {
         content: '';
