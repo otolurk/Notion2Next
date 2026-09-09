@@ -50,14 +50,15 @@ const CONFIG = {
 
   // ============================================
   // 主题调色 (Theme Colors)
+  // 日间：主题色 #B6E23A / 背景 #F3F7EF；夜间：主题色 #BFFF00 / 背景 #222222
   // ============================================
-  ENDSPACE_COLOR_BG_BASE: '#fafafa',
+  ENDSPACE_COLOR_BG_BASE: '#F3F7EF',
   ENDSPACE_COLOR_SURFACE: '#ffffff',
-  ENDSPACE_COLOR_TEXT: '#18181b',
-  ENDSPACE_COLOR_TEXT_SECONDARY: '#52525b',
-  ENDSPACE_COLOR_ACCENT: '#FBFB45',
-  ENDSPACE_COLOR_ACCENT_DIM: 'rgba(251, 251, 69, 0.15)',
-  ENDSPACE_COLOR_BORDER: '#e4e4e7',
+  ENDSPACE_COLOR_TEXT: '#1a2413',
+  ENDSPACE_COLOR_TEXT_SECONDARY: '#4f5a45',
+  ENDSPACE_COLOR_ACCENT: '#B6E23A',
+  ENDSPACE_COLOR_ACCENT_DIM: 'rgba(182, 226, 58, 0.15)',
+  ENDSPACE_COLOR_BORDER: '#dce5d5',
 
   // ============================================
   // 水印文字配置 (Watermark Text)
