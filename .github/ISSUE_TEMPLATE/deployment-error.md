@@ -3,10 +3,7 @@ name: Deployment error （部署错误）
 about: 在安装部署NotionNext时需要什么帮助吗
 title: ''
 labels: deployment
----
-
-> 一般部署问题也可发 [Discussions](https://github.com/notionnext-org/NotionNext/discussions/new/choose)；若确认是程序缺陷再填下方并保留 Issue。
-
+assignees: tangly1024
 ---
 
 

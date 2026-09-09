@@ -3,10 +3,7 @@ name: Feature request （新特性建议）
 about: Suggest an idea for Notion Next.
 title: ''
 labels: enhancement
----
-
-> 建议先在 [Discussions · 想法](https://github.com/notionnext-org/NotionNext/discussions/new/choose) 讨论范围；共识后再保留本 Issue 关联 PR。
-
+assignees: tangly1024
 ---
 
 <!--
