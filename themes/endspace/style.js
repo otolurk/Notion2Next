@@ -348,7 +348,7 @@ export const Style = () => {
       #theme-endspace #notion-article .notion-table,
       #theme-endspace #notion-article .notion-code,
       #theme-endspace #notion-article .notion-equation {
-        color: var(--endspace-text-primary) !important;
+        color: var(--endspace-article-text) !important;
       }
 
       #theme-endspace #notion-article p,
@@ -364,7 +364,7 @@ export const Style = () => {
       #theme-endspace #notion-article .notion-bookmark-link,
       #theme-endspace #notion-article .notion-collection-row-body,
       #theme-endspace #notion-article .notion-simple-table-cell {
-        color: var(--endspace-text-secondary) !important;
+        color: var(--endspace-article-text-secondary) !important;
       }
 
       #theme-endspace #notion-article h1,
