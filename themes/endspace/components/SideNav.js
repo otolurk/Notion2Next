@@ -287,19 +287,19 @@ export const SideNav = (props) => {
       {/* Music Player, Contact, and Toggle */}
       <div className="flex-shrink-0 flex flex-col justify-end h-auto pb-4">
         <div className={`mx-auto transition-[width] duration-300 ease-out ${isHovered ? 'w-[13.5rem]' : 'w-[3rem]'}`}>
-          <div className={`overflow-visible border border-gray-200 bg-gray-100/95 shadow-sm transition-[border-radius] duration-200 ${isHovered ? 'h-[7rem] rounded-2xl px-3 py-2' : 'h-[6.75rem] rounded-full px-1 py-2'}`}>
+          <div className={`overflow-visible border border-[var(--endspace-border-base)] bg-[var(--endspace-bg-secondary)] shadow-sm transition-[border-radius] duration-200 ${isHovered ? 'h-[7rem] rounded-2xl px-3 py-2' : 'h-[6.75rem] rounded-full px-1 py-2'}`}>
             {/* Music Player Section */}
             <div className={`flex items-center justify-center ${isHovered ? 'h-[3rem]' : 'h-10'}`}>
               <EndspacePlayer isExpanded={isHovered} embedded />
             </div>
 
-            <div className={`mx-auto h-px bg-gray-300/80 transition-[width] duration-300 ease-out ${isHovered ? 'my-1.5 w-full' : 'my-2 w-5'}`} />
+            <div className={`mx-auto h-px bg-[var(--endspace-border-base)] transition-[width] duration-300 ease-out ${isHovered ? 'my-1.5 w-full' : 'my-2 w-5'}`} />
 
             {/* Contact Links Section */}
             <div className="flex h-10 items-center justify-center overflow-hidden">
               {/* Collapsed State: Contact Button */}
               <div className={`flex justify-center transition-opacity duration-150 ${isHovered ? 'pointer-events-none absolute opacity-0' : 'opacity-100'}`}>
-                <div className="w-10 h-10 flex items-center justify-center text-gray-500 rounded-full cursor-pointer hover:text-black hover:bg-gray-200 transition-colors">
+                <div className="w-10 h-10 flex items-center justify-center text-[var(--endspace-text-muted)] rounded-full cursor-pointer hover:text-[var(--endspace-text-primary)] hover:bg-[var(--endspace-bg-tertiary)] transition-colors">
                   <RadarFillIcon size={18} />
                 </div>
               </div>
@@ -313,7 +313,7 @@ export const SideNav = (props) => {
                         handleEmailClick(e, emailIcon, CONTACT_EMAIL)
                       }
                       title='email'
-                      className='w-[1.75rem] h-[1.75rem] flex cursor-pointer items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-gray-200 hover:text-black flex-shrink-0'
+                      className='w-[1.75rem] h-[1.75rem] flex cursor-pointer items-center justify-center rounded-full text-[var(--endspace-text-muted)] transition-colors hover:bg-[var(--endspace-bg-tertiary)] hover:text-[var(--endspace-text-primary)] flex-shrink-0'
                       ref={emailIcon}>
                       <MailFillIcon size={14} />
                     </a>
@@ -329,7 +329,7 @@ export const SideNav = (props) => {
                         target="_blank"
                         rel="noreferrer"
                         title={label}
-                        className="w-[1.75rem] h-[1.75rem] flex items-center justify-center text-gray-500 rounded-full hover:text-black hover:bg-gray-200 transition-colors flex-shrink-0"
+                        className="w-[1.75rem] h-[1.75rem] flex items-center justify-center text-[var(--endspace-text-muted)] rounded-full hover:text-[var(--endspace-text-primary)] hover:bg-[var(--endspace-bg-tertiary)] transition-colors flex-shrink-0"
                       >
                         {renderSocialIcon(key, svg, label)}
                       </a>
