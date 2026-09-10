@@ -184,10 +184,10 @@ export const SideNav = (props) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Avatar Section - Top of sidebar, clickable to personal page */}
+      {/* Avatar Section - Top of sidebar, clickable to home */}
       {/* Fixed height container to prevent layout shift when expanded */}
       <div className="flex-shrink-0 h-[10rem] py-6 flex flex-col items-center">
-        <SmartLink href="/aboutme" title="Profile">
+        <SmartLink href="/" title="Home">
           <div className="w-[3rem] h-[3rem] flex-shrink-0 transition-transform duration-300 cursor-pointer hover:scale-105">
             <img 
               src={avatarUrl}
@@ -198,7 +198,7 @@ export const SideNav = (props) => {
         </SmartLink>
         {/* Author Info - shown when expanded, fills the reserved space below avatar */}
         <div className={`mt-3 text-center transition-all duration-300 overflow-hidden ${isHovered ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0'}`}>
-          <SmartLink href="/aboutme" className="hover:text-[var(--endspace-accent-yellow)] transition-colors">
+          <SmartLink href="/" className="hover:text-[var(--endspace-accent-yellow)] transition-colors">
             <div className="text-sm font-bold text-[var(--endspace-text-primary)] uppercase tracking-wider">
               {siteConfig('AUTHOR') || ''}
             </div>
@@ -227,7 +227,7 @@ export const SideNav = (props) => {
           const itemContent = (
             <div
               ref={el => itemRefs.current[item.name] = el}
-              className={`nier-nav-item relative h-[3rem] flex items-center cursor-pointer group transition-colors duration-300 hover:bg-[#d4d4d8] ${isActive ? 'active bg-[#d4d4d8]' : ''}`}
+              className={`nier-nav-item relative h-[3rem] flex items-center cursor-pointer group transition-colors duration-300 hover:bg-[var(--endspace-bg-tertiary)] ${isActive ? 'active bg-[var(--endspace-bg-tertiary)]' : ''}`}
               onClick={hasSubMenu ? toggleSubMenu : undefined}
               role={hasSubMenu ? 'button' : undefined}
               tabIndex={hasSubMenu ? 0 : undefined}
