@@ -378,8 +378,7 @@ export const Style = () => {
         color: var(--endspace-text-primary) !important;
       }
 
-      /* Headers - NieR: Automata Style Dynamic Shadow */
-      /* Requirement: Misaligned when not hovered, Merged when hovered */
+      /* Headers - 干净的工业风标题（无 RGB 色散/重影） */
       #notion-article h1, #notion-article h2, #notion-article h3 {
         color: var(--endspace-text-primary);
         font-weight: 800;
@@ -388,27 +387,14 @@ export const Style = () => {
         position: relative;
         padding-left: 1rem;
         letter-spacing: 0.02em; /* Slightly wider spacing for the 'digital' look */
-        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Snappy tech transition */
-
-        /* Default: Distinctly Misaligned / Interlaced Layers */
-        /* Layer 1: Cyan Ghost (Top Left) */
-        /* Layer 2: Red/Dark Ghost (Bottom Right) */
-        text-shadow:
-          -4px -2px 0 rgba(6, 182, 212, 0.5),
-          4px 2px 0 rgba(255, 50, 50, 0.3);
-
-        /* Subtle opacity drop to emphasize the 'hologram' feel when idle */
-        opacity: 0.85;
+        text-shadow: none;
+        opacity: 1;
+        transition: color 0.2s ease;
       }
 
-      /* Hover: Merge / Snap to focus */
+      /* Hover: 只做极轻微的物理位移（不再有阴影合并特效） */
       #notion-article h1:hover, #notion-article h2:hover, #notion-article h3:hover {
-        /* Shadows merge into the text */
-        text-shadow:
-          0 0 0 rgba(6, 182, 212, 0),
-          0 0 0 rgba(255, 50, 50, 0);
-        opacity: 1;
-        transform: translateX(2px); /* Slight physical shift on 'lock-on' */
+        transform: translateX(2px);
       }
 
       #notion-article h1::before,
@@ -826,15 +812,13 @@ export const Style = () => {
 
       /* ============================================
          NieR: Automata Style Title (Reusable)
+         注：已移除 RGB 色散/重影阴影，改为干净的强调色左条
          ============================================ */
       .nier-title {
         position: relative;
         font-weight: 800;
         letter-spacing: 0.05em;
-        text-shadow:
-          2px 2px 0 rgba(98, 240, 245, 0.35),
-          4px 4px 0 rgba(98, 240, 245, 0.18),
-          6px 6px 10px rgba(0, 0, 0, 0.15);
+        text-shadow: none;
       }
 
       /* ============================================
