@@ -72,27 +72,29 @@ const FloatingControls = ({ toc, ...props }) => {
   }
 
   // Common Button Style (Double Circle)
-  const ControlBtn = ({ icon: Icon, onClick, active, label, showPercent, iconClassName = "text-black", iconSize = 20 }) => (
+  // 颜色一律走主题变量：日/夜自动切换，夜间不会出现白底黑字
+  const ICON_DEFAULT = 'text-[var(--endspace-text-primary)] group-hover:text-[#0a0a0a]'
+  const ControlBtn = ({ icon: Icon, onClick, active, label, showPercent, iconClassName = ICON_DEFAULT, iconSize = 20 }) => (
     <button
       onClick={onClick}
-      className="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1 cursor-pointer group shadow-lg transition-transform active:scale-95"
+      className="w-10 h-10 rounded-full bg-[var(--endspace-bg-primary)] border border-[var(--endspace-border-base)] flex items-center justify-center p-1 cursor-pointer group shadow-lg transition-transform active:scale-95"
       aria-label={label}
       title={label}
     >
       <div 
         className={`w-full h-full rounded-full flex items-center justify-center transition-colors duration-200 ${
-            active ? 'bg-[#FBFB46]' : 'bg-transparent group-hover:bg-[#FBFB46]'
+            active ? 'bg-[var(--endspace-accent-yellow)]' : 'bg-transparent group-hover:bg-[var(--endspace-accent-yellow)]'
         }`}
       >
         {showPercent ? (
             <div className="relative w-full h-full flex items-center justify-center">
-                <span className={`text-[10px] font-bold font-mono ${active ? 'text-black hidden' : 'text-gray-600 group-hover:hidden'}`}>
+                <span className={`text-[10px] font-bold font-mono ${active ? 'text-[#0a0a0a] hidden' : 'text-[var(--endspace-text-secondary)] group-hover:hidden'}`}>
                     {Math.round(percent)}%
                 </span>
-                <Icon size={iconSize} stroke={2} className={`${iconClassName} ${active ? 'block' : 'hidden group-hover:block'}`} />
+                <Icon size={iconSize} stroke={2} className={`${active ? 'text-[#0a0a0a]' : iconClassName} ${active ? 'block' : 'hidden group-hover:block'}`} />
             </div>
         ) : (
-            <Icon size={iconSize} stroke={2} className={iconClassName} />
+            <Icon size={iconSize} stroke={2} className={active ? 'text-[#0a0a0a]' : iconClassName} />
         )}
       </div>
     </button>
@@ -108,7 +110,7 @@ const FloatingControls = ({ toc, ...props }) => {
       {/* The Drawer (Mobile Sheet / Desktop Popover) */}
       <div
         className={`
-            transition-all duration-300 ease-out bg-[#f7f9fe] border-[var(--endspace-border-base)] shadow-2xl overflow-hidden
+            transition-all duration-300 ease-out bg-[var(--endspace-bg-primary)] border-[var(--endspace-border-base)] shadow-2xl overflow-hidden
             
             /* Mobile Styles: Bottom Sheet */
             fixed bottom-0 left-0 right-0 w-full rounded-t-2xl border-t z-40
@@ -121,25 +123,28 @@ const FloatingControls = ({ toc, ...props }) => {
         `}
         style={{
             /* Mobile Height Limit */
-            maxHeight: '70vh', 
+            maxHeight: '70vh',
+            /* 显式锁定面板底色/描边：避免组件内残留的浅色类在夜间漏出 */
+            backgroundColor: 'var(--endspace-bg-primary)',
+            borderColor: 'var(--endspace-border-base)'
         }}
       >
              {/* Header */}
-             <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-white shrinking-0">
-                <h3 className="font-bold text-sm uppercase flex items-center gap-2 text-black">
+             <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--endspace-border-base)] bg-[var(--endspace-bg-primary)] shrinking-0">
+                <h3 className="font-bold text-sm uppercase flex items-center gap-2 text-[var(--endspace-text-primary)]">
                     {activeTab === 'toc' ? (
                         <>
-                            <IconListTree size={16} className="text-black" />
+                            <IconListTree size={16} className="text-[var(--endspace-accent-yellow)]" />
                             <span>Table of Contents</span>
                         </>
                     ) : (
                         <>
-                             <IconClock size={16} className="text-black" />
+                             <IconClock size={16} className="text-[var(--endspace-accent-yellow)]" />
                              <span>Recent Logs</span>
                         </>
                     )}
                 </h3>
-                <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-black">
+                <button onClick={() => setIsOpen(false)} className="text-[var(--endspace-text-muted)] hover:text-[var(--endspace-text-primary)] transition-colors">
                     <IconX size={18} />
                 </button>
              </div>
@@ -158,7 +163,7 @@ const FloatingControls = ({ toc, ...props }) => {
                                 <a
                                   key={id}
                                   href={`#${id}`}
-                                  className={`block py-1 text-xs transition-colors rounded px-2 -mx-2 ${isActive ? 'text-black font-bold bg-[#FBFB46]/10' : 'text-gray-500 hover:text-black hover:bg-white'}`}
+                                  className={`block py-1 text-xs transition-colors rounded px-2 -mx-2 ${isActive ? 'font-bold text-[var(--endspace-text-primary)] bg-[var(--endspace-accent-yellow-dim)]' : 'text-[var(--endspace-text-secondary)] hover:text-[var(--endspace-text-primary)] hover:bg-[var(--endspace-bg-secondary)]'}`}
                                   style={{ paddingLeft: `${(t.indentLevel || 0) * 12 + 8}px` }}
                                   onClick={() => {
                                       // Optional: Close on click for mobile?
@@ -180,14 +185,18 @@ const FloatingControls = ({ toc, ...props }) => {
       {/* The Controls (Buttons) */}
       <div className="fixed right-4 bottom-8 z-50 flex flex-col items-end gap-2 pointer-events-none">
         {/* Capsule */}
-        <div className="bg-gray-400/80 backdrop-blur-sm p-1.5 rounded-full shadow-lg flex flex-row lg:flex-col gap-3 pointer-events-auto">
+        <div
+          className="bg-gray-400/80 backdrop-blur-sm p-1.5 rounded-full shadow-lg flex flex-row lg:flex-col gap-3 pointer-events-auto"
+          /* color-mix 生效时用主题色（80% 透明）；不支持则回退上面的 bg-gray-400/80 */
+          style={{ backgroundColor: 'color-mix(in srgb, var(--endspace-bg-tertiary) 80%, transparent)' }}
+        >
              {/* LOGS */}
              <ControlBtn 
                 icon={IconClock} 
                 label="Recent Logs" 
                 active={activeTab === 'logs'}
                 onClick={() => toggleDrawer('logs')}
-                iconClassName="text-black"
+                iconClassName={ICON_DEFAULT}
                 iconSize={24}
              />
 
@@ -199,7 +208,7 @@ const FloatingControls = ({ toc, ...props }) => {
                     active={activeTab === 'toc'}
                     onClick={() => toggleDrawer('toc')}
                     showPercent={true}
-                    iconClassName="text-gray-500"
+                    iconClassName="text-[var(--endspace-text-secondary)] group-hover:text-[#0a0a0a]"
                     iconSize={28}
                  />
              )}
