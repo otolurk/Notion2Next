@@ -22,19 +22,19 @@ export const THEME_SWITCH_MANIFEST = {
       { key: 'ENDSPACE_MENU_ARCHIVE', label: '归档菜单', type: 'boolean', defaultValue: true }
     ],
     palette: [
-      { key: 'ENDSPACE_COLOR_BG_BASE', cssVar: '--endspace-bg-base-light', label: '页面背景', defaultValue: '#fafafa' },
+      { key: 'ENDSPACE_COLOR_BG_BASE', cssVar: '--endspace-bg-base-light', label: '页面背景', defaultValue: '#F3F7EF' },
       { key: 'ENDSPACE_COLOR_SURFACE', cssVar: '--endspace-bg-primary-light', label: '卡片背景', defaultValue: '#ffffff' },
-      { key: 'ENDSPACE_COLOR_TEXT', cssVar: '--endspace-text-primary-light', label: '主文字', defaultValue: '#18181b' },
-      { key: 'ENDSPACE_COLOR_TEXT_SECONDARY', cssVar: '--endspace-text-secondary-light', label: '次级文字', defaultValue: '#52525b' },
-      { key: 'ENDSPACE_COLOR_ACCENT', cssVar: '--endspace-accent-yellow-light', label: '强调色', defaultValue: '#FBFB45' },
-      { key: 'ENDSPACE_COLOR_ACCENT_DIM', cssVar: '--endspace-accent-yellow-dim-light', label: '弱强调色', defaultValue: 'rgba(251, 251, 69, 0.15)' },
-      { key: 'ENDSPACE_COLOR_BORDER', cssVar: '--endspace-border-base-light', label: '边框', defaultValue: '#e4e4e7' },
-      { key: 'ENDSPACE_COLOR_BG_BASE_DARK', cssVar: '--endspace-bg-base-dark', label: '深色模式：页面背景', defaultValue: '#09090b' },
-      { key: 'ENDSPACE_COLOR_SURFACE_DARK', cssVar: '--endspace-bg-primary-dark', label: '深色模式：卡片背景', defaultValue: '#18181b' },
-      { key: 'ENDSPACE_COLOR_TEXT_DARK', cssVar: '--endspace-text-primary-dark', label: '深色模式：主文字', defaultValue: '#f4f4f5' },
-      { key: 'ENDSPACE_COLOR_TEXT_SECONDARY_DARK', cssVar: '--endspace-text-secondary-dark', label: '深色模式：次级文字', defaultValue: '#d4d4d8' },
-      { key: 'ENDSPACE_COLOR_BORDER_DARK', cssVar: '--endspace-border-base-dark', label: '深色模式：边框', defaultValue: '#3f3f46' },
-      { key: 'ENDSPACE_COLOR_ACCENT_DARK', cssVar: '--endspace-accent-yellow-dark', label: '深色模式：强调色', defaultValue: '#fef08a' }
+      { key: 'ENDSPACE_COLOR_TEXT', cssVar: '--endspace-text-primary-light', label: '主文字', defaultValue: '#1a2413' },
+      { key: 'ENDSPACE_COLOR_TEXT_SECONDARY', cssVar: '--endspace-text-secondary-light', label: '次级文字', defaultValue: '#4f5a45' },
+      { key: 'ENDSPACE_COLOR_ACCENT', cssVar: '--endspace-accent-yellow-light', label: '强调色', defaultValue: '#B6E23A' },
+      { key: 'ENDSPACE_COLOR_ACCENT_DIM', cssVar: '--endspace-accent-yellow-dim-light', label: '弱强调色', defaultValue: 'rgba(182, 226, 58, 0.15)' },
+      { key: 'ENDSPACE_COLOR_BORDER', cssVar: '--endspace-border-base-light', label: '边框', defaultValue: '#dce5d5' },
+      { key: 'ENDSPACE_COLOR_BG_BASE_DARK', cssVar: '--endspace-bg-base-dark', label: '深色模式：页面背景', defaultValue: '#222222' },
+      { key: 'ENDSPACE_COLOR_SURFACE_DARK', cssVar: '--endspace-bg-primary-dark', label: '深色模式：卡片背景', defaultValue: '#2b2b2b' },
+      { key: 'ENDSPACE_COLOR_TEXT_DARK', cssVar: '--endspace-text-primary-dark', label: '深色模式：主文字', defaultValue: '#f2f2f2' },
+      { key: 'ENDSPACE_COLOR_TEXT_SECONDARY_DARK', cssVar: '--endspace-text-secondary-dark', label: '深色模式：次级文字', defaultValue: '#c2c2c2' },
+      { key: 'ENDSPACE_COLOR_BORDER_DARK', cssVar: '--endspace-border-base-dark', label: '深色模式：边框', defaultValue: '#454545' },
+      { key: 'ENDSPACE_COLOR_ACCENT_DARK', cssVar: '--endspace-accent-yellow-dark', label: '深色模式：强调色', defaultValue: '#BFFF00' }
     ]
   },
   next: {
@@ -166,8 +166,8 @@ export const THEME_SWITCH_MANIFEST = {
       { key: 'FUKASAWA_COLOR_BG', cssVar: '--fukasawa-color-bg', label: '页面背景', defaultValue: '#eeedee' },
       { key: 'FUKASAWA_COLOR_CARD', cssVar: '--fukasawa-color-card', label: '卡片背景', defaultValue: '#ffffff' },
       { key: 'FUKASAWA_COLOR_BORDER', cssVar: '--fukasawa-color-border', label: '边框', defaultValue: '#d4d4d8' },
-      { key: 'FUKASAWA_COLOR_TEXT', cssVar: '--fukasawa-color-text', label: '主文字', defaultValue: '#18181b' },
-      { key: 'FUKASAWA_COLOR_TEXT_SECONDARY', cssVar: '--fukasawa-color-text-secondary', label: '次级文字', defaultValue: '#52525b' },
+      { key: 'FUKASAWA_COLOR_TEXT', cssVar: '--fukasawa-color-text', label: '主文字', defaultValue: '#1a2413' },
+      { key: 'FUKASAWA_COLOR_TEXT_SECONDARY', cssVar: '--fukasawa-color-text-secondary', label: '次级文字', defaultValue: '#4f5a45' },
       { key: 'FUKASAWA_COLOR_BG_DARK', cssVar: '--fukasawa-color-bg-dark', label: '深色模式：页面背景', defaultValue: '#111827' },
       { key: 'FUKASAWA_COLOR_CARD_DARK', cssVar: '--fukasawa-color-card-dark', label: '深色模式：卡片背景', defaultValue: '#1f2937' },
       { key: 'FUKASAWA_COLOR_BORDER_DARK', cssVar: '--fukasawa-color-border-dark', label: '深色模式：边框', defaultValue: '#374151' },
