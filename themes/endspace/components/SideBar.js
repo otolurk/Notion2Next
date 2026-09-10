@@ -83,7 +83,7 @@ export const SideBar = (props) => {
               <SmartLink
                 key={tag.name}
                 href={`/tag/${encodeURIComponent(tag.name)}`}
-                className="px-3 py-1.5 text-xs font-medium bg-[var(--endspace-bg-secondary)] text-[var(--endspace-text-secondary)] hover:bg-[var(--endspace-text-primary)] hover:text-white transition-all rounded-sm"
+                className="px-3 py-1.5 text-xs font-medium bg-[var(--endspace-bg-secondary)] text-[var(--endspace-text-secondary)] hover:bg-[var(--endspace-accent-yellow)] hover:text-[#0a0a0a] transition-all rounded-sm"
               >
                 {tag.name}
               </SmartLink>
