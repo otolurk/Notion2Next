@@ -2,6 +2,7 @@ import SmartLink from '@/components/SmartLink'
 import { siteConfig } from '@/lib/config'
 import CONFIG from '../config'
 import { IconArrowRight } from '@tabler/icons-react'
+import { useState } from 'react'
 
 /**
  * BlogPostCard Component - Minimalist Light Industrial
@@ -11,21 +12,32 @@ export const BlogPostCard = ({ post, showSummary = true }) => {
   const showPreview = siteConfig('ENDSPACE_POST_LIST_PREVIEW', true, CONFIG)
   const showCover = siteConfig('ENDSPACE_POST_LIST_COVER', true, CONFIG)
   const hasCover = showCover && post.pageCoverThumbnail
+  // 封面加载失败 → 折叠成一行提示，不再占据 aspect-video 的大块高度
+  const [coverError, setCoverError] = useState(false)
 
   return (
     <SmartLink href={`/${post.slug}`}>
       <article className={`endspace-frame group mb-6 flex flex-col overflow-hidden relative transition-all duration-300`}>
-        
+
         {/* Cover Image - Top (Full Width) */}
         {hasCover && (
-          <div className="w-full aspect-video flex-shrink-0 relative overflow-hidden z-10 bg-black/5">
-            <img
-              src={post.pageCoverThumbnail}
-              alt={post.title}
-              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-            />
-            {/* Minimalist marker overlay */}
-            <div className="absolute top-3 right-3 w-2 h-2 bg-[var(--endspace-accent-yellow)] opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className={`w-full flex-shrink-0 relative overflow-hidden z-10 bg-black/5 ${coverError ? 'h-8 flex items-center px-4 border-b border-[var(--endspace-border-base)]' : 'aspect-video'}`}>
+            {coverError ? (
+              <span className="font-mono text-[11px] leading-none tracking-wider text-[var(--endspace-text-muted)] truncate">
+                {'// 封面加载失败... Cover failed to load...'}
+              </span>
+            ) : (
+              <>
+                <img
+                  src={post.pageCoverThumbnail}
+                  alt={post.title}
+                  onError={() => setCoverError(true)}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
+                {/* Minimalist marker overlay */}
+                <div className="absolute top-3 right-3 w-2 h-2 bg-[var(--endspace-accent-yellow)] opacity-0 group-hover:opacity-100 transition-opacity" />
+              </>
+            )}
           </div>
         )}
 
