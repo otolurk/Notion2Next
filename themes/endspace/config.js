@@ -64,9 +64,9 @@ const CONFIG = {
   // 水印文字配置 (Watermark Text)
   // ============================================
   // 首页标题栏背景滚动水印文字（大字循环动画）
-  ENDSPACE_BANNER_WATERMARK_TEXT: 'CLOUD09_SPACE',
+  ENDSPACE_BANNER_WATERMARK_TEXT: 'OTO_TIME_LINE_HEAR',
   // 文章详情页右上角水印文字
-  ENDSPACE_ARTICLE_WATERMARK_TEXT: 'CLOUD09',
+  ENDSPACE_ARTICLE_WATERMARK_TEXT: 'OTOLOOK',
 
   // ============================================
   // 菜单配置 (Menu)
@@ -111,7 +111,7 @@ const CONFIG = {
   // ============================================
   // 浮动控件 (Floating controls)
   // ============================================
-  /** 右下角胶囊是否显示浅色/深色切换（夜间模式已禁用） */
-  ENDSPACE_WIDGET_DARK_MODE: false
+  /** 右下角胶囊是否显示浅色/深色切换 */
+  ENDSPACE_WIDGET_DARK_MODE: true
 }
 export default CONFIG
