@@ -1128,14 +1128,13 @@ export const Style = () => {
       /* ============================================
          Dark Mode 矫正层
          组件里存在大量硬编码的浅色 Tailwind 工具类
-         （bg-white / bg-gray-* / text-gray-* / border-gray-* /
-          旧强调黄 #FBFB46），夜间模式下统一矫正：
+         （bg-white / bg-gray-* / text-gray-* / border-gray-*），
+         夜间模式下统一矫正：
          - 浅色底 → 深色面板
          - 灰字 → 提亮
-         - 旧黄 → 荧光绿 #BFFF00
-         注意：text-black / bg-black 不动 ——
-         text-black 总是和荧光绿底配对（黑字绿底对比最好），
-         bg-black/40 是图片遮罩，改了会变成实心色块
+         - text-black → 由下方专门规则处理（区分是否在强调色底上）
+         注意：bg-black 系列不动 —— bg-black/40 是图片遮罩，
+         改了会变成实心色块
          ============================================ */
       .dark #theme-endspace [class*='bg-white'] {
         background-color: #2e2e2e !important;
@@ -1152,9 +1151,6 @@ export const Style = () => {
       .dark #theme-endspace [class*='bg-gray-400'] {
         background-color: #3d3d3d !important;
       }
-      .dark #theme-endspace [class*='bg-[#d4d4d8]'] {
-        background-color: #404040 !important;
-      }
       .dark #theme-endspace [class*='border-gray-'] {
         border-color: #454545 !important;
       }
@@ -1167,16 +1163,34 @@ export const Style = () => {
       .dark #theme-endspace [class*='text-gray-700'] {
         color: #a6a6a6 !important;
       }
-      /* 旧强调黄 #FBFB46 → 主题强调色（变量按日/夜自动解析）
-         放在矫正层之前、日夜通用 */
-      #theme-endspace [class*='bg-[#FBFB46'] {
-        background-color: var(--endspace-accent-yellow) !important;
+      /* 旧强调黄 #FBFB46 已在组件层替换为 var(--endspace-accent-yellow)，
+         此处不再需要类名矫正 */
+
+      /* ============================================
+         夜间 text-black 矫正
+         组件里 text-black 有两种语义：
+         (1) 强调色底上的黑字 —— 必须保持黑
+         (2) 深色面板/深色页上的黑字 —— 夜间不可读，要提亮
+         策略：夜间先一律提亮，再对「强调色底」做例外回黑
+         ============================================ */
+      .dark #theme-endspace [class*='text-black'] {
+        color: var(--endspace-text-primary) !important;
       }
-      #theme-endspace [class*='border-[#FBFB46'] {
-        border-color: var(--endspace-accent-yellow) !important;
+
+      /* 例外 1：自身是强调色底（常态或悬停） */
+      .dark #theme-endspace [class*='bg-[var(--endspace-accent-yellow)]'][class*='text-black'],
+      .dark #theme-endspace [class*='bg-[var(--endspace-accent-yellow)]'] [class*='text-black'],
+      .dark #theme-endspace [class*='hover:bg-[var(--endspace-accent-yellow)]'][class*='hover:text-black']:hover,
+      .dark #theme-endspace [class*='hover:bg-[var(--endspace-accent-yellow)]']:hover [class*='text-black'] {
+        color: #0a0a0a !important;
       }
-      #theme-endspace [class*='text-[#FBFB46'] {
-        color: var(--endspace-accent-yellow) !important;
+
+      /* 例外 2：group / group/item 悬停时父级露出强调色底
+         （卡片 swoosh 扫过、搜索结果整行高亮等） */
+      .dark #theme-endspace .group:hover [class*='group-hover:text-black'],
+      .dark #theme-endspace .group:hover [class*='group-hover:bg-[var(--endspace-accent-yellow)]'] [class*='text-black'],
+      .dark #theme-endspace [class*='group/item']:hover [class*='group-hover/item:text-black'] {
+        color: #0a0a0a !important;
       }
 
       /* 侧边栏菜单图标：夜间用亮色/荧光绿代替黑色 */
