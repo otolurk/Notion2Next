@@ -32,6 +32,13 @@ export const Style = () => {
         --endspace-text-secondary: #4f5a45;
         --endspace-text-muted: #8a9480;
 
+        /* Article Body Text - 日间纯黑，夜间跟随主题文字色 */
+        --endspace-article-text: #000;
+        --endspace-article-text-secondary: #1a1a1a;
+
+        /* 分类/标签药丸（.ef-btn）底色 - 日间纯白，夜间深灰面板 */
+        --endspace-btn-bg: #ffffff;
+
         /* Accents (Subtle Industrialism) -> Light: #B6E23A / Dark: #BFFF00 */
         --endspace-accent-yellow-light: #B6E23A;
         --endspace-accent-yellow-dark: #BFFF00;
@@ -89,6 +96,9 @@ export const Style = () => {
         --endspace-text-primary: var(--endspace-text-primary-dark);
         --endspace-text-secondary: var(--endspace-text-secondary-dark);
         --endspace-text-muted: #9a9a9a;
+        --endspace-article-text: var(--endspace-text-primary);
+        --endspace-article-text-secondary: var(--endspace-text-secondary);
+        --endspace-btn-bg: #3F3F46;
         --endspace-border-base: var(--endspace-border-base-dark);
         --endspace-accent-yellow: var(--endspace-accent-yellow-dark);
         --endspace-accent-yellow-dim: var(--endspace-accent-yellow-dim-dark);
@@ -1045,13 +1055,13 @@ export const Style = () => {
         align-items: center;
         gap: 0.75rem; /* Space between indicator and text */
         padding: 0.5rem 1rem 0.5rem 0.75rem;
-        background-color: #3F3F46 !important; /* Normal: Dark Grey matching screenshot */
+        background-color: var(--endspace-btn-bg) !important; /* 日间纯白 / 夜间深灰面板 */
         border-radius: 1px;
         cursor: pointer;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         width: fit-content;
         min-width: min-content;
-        border: 1px solid transparent;
+        border: 1px solid var(--endspace-border-base); /* 白底需要边界 */
         text-decoration: none !important; /* Remove default link underline */
         position: relative;
         z-index: 10;
@@ -1059,6 +1069,7 @@ export const Style = () => {
 
       .ef-btn:hover {
         background-color: var(--endspace-accent-yellow) !important; /* Hover: Accent */
+        border-color: var(--endspace-accent-yellow);
         border-radius: 3px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         transform: translateY(-1px);
