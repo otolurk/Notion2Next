@@ -27,7 +27,7 @@ export const Style = () => {
       :root {
         /* Ethereal Whites & Grays */
         --endspace-bg-base-light: #F3F7EF;
-        --endspace-bg-base-dark: #222222;
+        --endspace-bg-base-dark: #2c2c2c;
         --endspace-bg-primary-light: #ffffff;
         --endspace-bg-primary-dark: #454760;
         --endspace-bg-base: #F3F7EF;
@@ -37,7 +37,7 @@ export const Style = () => {
 
         /* Dark Text (High Contrast) */
         --endspace-text-primary-light: #1a2413;
-        --endspace-text-primary-dark: #FEFEF0;
+        --endspace-text-primary-dark: #E6E6E6;
         --endspace-text-secondary-light: #4f5a45;
         --endspace-text-secondary-dark: #D6D5C5;
         --endspace-text-primary: #1a2413;
@@ -71,12 +71,12 @@ export const Style = () => {
         /* 分类/标签药丸（.ef-btn）底色 - 日间纯白，夜间深灰面板 */
         --endspace-btn-bg: #ffffff;
 
-        /* Accents (Subtle Industrialism) -> Light: #B6E23A / Dark: #004097 浓琉璃色 */
+        /* Accents (Subtle Industrialism) -> Light: #B6E23A / Dark: #0056B3 浓琉璃色 */
         --endspace-accent-yellow-light: #B6E23A;
-        --endspace-accent-yellow-dark: #004097;
+        --endspace-accent-yellow-dark: #0056B3;
         --endspace-accent-yellow: #B6E23A;
         --endspace-accent-yellow-dim-light: rgba(182, 226, 58, 0.15);
-        --endspace-accent-yellow-dim-dark: rgba(0, 64, 151, 0.2);
+        --endspace-accent-yellow-dim-dark: rgba(0, 86, 179, 0.2);
         --endspace-accent-yellow-dim: rgba(182, 226, 58, 0.15);
         --endspace-accent-cyan: #B6E23A; /* OVERRIDE: Cyan usage -> Accent */
         --endspace-accent-cyan-dim: rgba(182, 226, 58, 0.1); /* OVERRIDE: Cyan dim -> Accent dim */
@@ -136,7 +136,7 @@ export const Style = () => {
         --endspace-accent-yellow-dim: var(--endspace-accent-yellow-dim-dark);
         --endspace-accent-cyan: var(--endspace-accent-yellow-dark);
         --endspace-accent-cyan-dim: var(--endspace-accent-yellow-dim-dark);
-        --endspace-grid-color: rgba(254, 254, 240, 0.05);
+        --endspace-grid-color: rgba(230, 230, 230, 0.05);
       }
 
       #theme-endspace {
@@ -213,7 +213,7 @@ export const Style = () => {
       }
 
       .dark #theme-endspace .endspace-search-highlight {
-        color: #FEFEF0;
+        color: #E6E6E6;
       }
 
       .archive-section {
@@ -1206,11 +1206,11 @@ export const Style = () => {
          用 [class*=] 会让 'bg-[var(--endspace-accent-yellow)]' 子串匹配到
          容器上的 'hover:bg-[var(--endspace-accent-yellow)]'，
          导致整张卡片内的 text-black 被永久锁成黑色 —— 夜间就是黑底黑字看不见。
-         夜间强调色为深蓝 #004097（浓琉璃色），其上的文字应为荔枝白 #FEFEF0 而非黑色 */
+         夜间强调色为深蓝 #0056B3（浓琉璃色），其上的文字应为荔枝白 #E6E6E6 而非黑色 */
       .dark #theme-endspace [class~='bg-[var(--endspace-accent-yellow)]'][class~='text-black'],
       .dark #theme-endspace [class~='hover:bg-[var(--endspace-accent-yellow)]']:hover [class~='text-black'],
       .dark #theme-endspace [class~='hover:bg-[var(--endspace-accent-yellow)]'][class~='hover:text-black']:hover {
-        color: #FEFEF0 !important;
+        color: #E6E6E6 !important;
       }
 
       /* 例外 2：group / group/item 悬停时父级露出强调色底
@@ -1220,7 +1220,7 @@ export const Style = () => {
       .dark #theme-endspace .group:hover [class*='group-hover:text-black'],
       .dark #theme-endspace .group:hover [class~='group-hover:bg-[var(--endspace-accent-yellow)]'] [class~='text-black'],
       .dark #theme-endspace [class*='group/item']:hover [class*='group-hover/item:text-black'] {
-        color: #FEFEF0 !important;
+        color: #E6E6E6 !important;
       }
 
       /* 夜间强调色底上的黑字组件（日间强调色亮、黑字正确，需在夜间反转） */
@@ -1229,12 +1229,12 @@ export const Style = () => {
       .dark #theme-endspace .endspace-btn:hover,
       .dark #theme-endspace .endspace-button-primary,
       .dark #theme-endspace .ef-button:hover {
-        color: #FEFEF0 !important;
+        color: #E6E6E6 !important;
       }
       .dark #theme-endspace .ef-btn:hover .ef-btn-indicator,
       .dark #theme-endspace .archive-filter-btn:hover .ef-btn-indicator,
       .dark #theme-endspace .ef-button:hover::before {
-        background-color: #FEFEF0 !important;
+        background-color: #E6E6E6 !important;
       }
 
       /* 侧边栏菜单图标：夜间用亮色/荧光绿代替黑色 */
@@ -1266,11 +1266,11 @@ export const Style = () => {
       .dark #theme-endspace .nier-nav-item.active .endspace-menu-icon-wrap,
       .dark #theme-endspace .nier-nav-item.active .endspace-menu-icon-wrap i,
       .dark #theme-endspace .nier-nav-item.active .endspace-menu-icon-wrap svg {
-        color: #FEFEF0 !important;
+        color: #E6E6E6 !important;
       }
       .dark #theme-endspace .endspace-notion-menu-dot.is-active,
       .dark #theme-endspace .nier-nav-item:hover .endspace-notion-menu-dot {
-        background: #FEFEF0;
+        background: #E6E6E6;
       }
 
       ${themeConsoleStyle('endspace', CONFIG)}

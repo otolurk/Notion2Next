@@ -24,10 +24,10 @@ const THEME_COLOR_DEFAULTS = {
     TEXT: '#1a2413',
     TEXT_SECONDARY: '#4f5a45',
     BORDER: '#dce5d5',
-    PRIMARY_DARK: '#004097',
-    BG_DARK: '#222222',
+    PRIMARY_DARK: '#0056B3',
+    BG_DARK: '#2c2c2c',
     CARD_DARK: '#454760',
-    TEXT_DARK: '#fefef0',
+    TEXT_DARK: '#e6e6e6',
     TEXT_SECONDARY_DARK: '#D6D5C5',
     BORDER_DARK: '#5B5D78'
   }
