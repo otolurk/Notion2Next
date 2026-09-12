@@ -29,7 +29,7 @@ export const Style = () => {
         --endspace-bg-base-light: #F3F7EF;
         --endspace-bg-base-dark: #2c2c2c;
         --endspace-bg-primary-light: #ffffff;
-        --endspace-bg-primary-dark: #454760;
+        --endspace-bg-primary-dark: #363636;
         --endspace-bg-base: #F3F7EF;
         --endspace-bg-primary: #ffffff;
         --endspace-bg-secondary: #eaf0e4;
@@ -39,7 +39,7 @@ export const Style = () => {
         --endspace-text-primary-light: #1a2413;
         --endspace-text-primary-dark: #E6E6E6;
         --endspace-text-secondary-light: #4f5a45;
-        --endspace-text-secondary-dark: #D6D5C5;
+        --endspace-text-secondary-dark: #C9C9C9;
         --endspace-text-primary: #1a2413;
         --endspace-text-secondary: #4f5a45;
         --endspace-text-muted: #8a9480;
@@ -83,7 +83,7 @@ export const Style = () => {
 
         /* Borders & Lines */
         --endspace-border-base-light: #dce5d5;
-        --endspace-border-base-dark: #5B5D78;
+        --endspace-border-base-dark: #0056B3;
         --endspace-border-base: #dce5d5;
         --endspace-border-active: #B6E23A; /* Active border -> Accent */
         --endspace-grid-color: rgba(0,0,0,0.03);
@@ -123,14 +123,14 @@ export const Style = () => {
         color-scheme: dark;
         --endspace-bg-base: var(--endspace-bg-base-dark);
         --endspace-bg-primary: var(--endspace-bg-primary-dark);
-        --endspace-bg-secondary: #4D4F6A;
-        --endspace-bg-tertiary: #54566F;
+        --endspace-bg-secondary: #3d3d3d;
+        --endspace-bg-tertiary: #454545;
         --endspace-text-primary: var(--endspace-text-primary-dark);
         --endspace-text-secondary: var(--endspace-text-secondary-dark);
-        --endspace-text-muted: #A3A294;
+        --endspace-text-muted: #909090;
         --endspace-article-text: var(--endspace-text-primary);
         --endspace-article-text-secondary: var(--endspace-text-secondary);
-        --endspace-btn-bg: #484A63;
+        --endspace-btn-bg: #3a3a3a;
         --endspace-border-base: var(--endspace-border-base-dark);
         --endspace-accent-yellow: var(--endspace-accent-yellow-dark);
         --endspace-accent-yellow-dim: var(--endspace-accent-yellow-dim-dark);
@@ -1161,31 +1161,31 @@ export const Style = () => {
          改了会变成实心色块
          ============================================ */
       .dark #theme-endspace [class*='bg-white'] {
-        background-color: #454760 !important;
+        background-color: #363636 !important;
       }
       .dark #theme-endspace [class*='bg-gray-100'] {
-        background-color: #40425A !important;
+        background-color: #313131 !important;
       }
       .dark #theme-endspace [class*='bg-gray-200'] {
-        background-color: #4D4F6A !important;
+        background-color: #3d3d3d !important;
       }
       .dark #theme-endspace [class*='bg-gray-300'] {
-        background-color: #54566F !important;
+        background-color: #454545 !important;
       }
       .dark #theme-endspace [class*='bg-gray-400'] {
-        background-color: #4D4F68 !important;
+        background-color: #3a3a3a !important;
       }
       .dark #theme-endspace [class*='border-gray-'] {
-        border-color: #5B5D78 !important;
+        border-color: #0056B3 !important;
       }
       .dark #theme-endspace [class*='text-gray-300'] {
-        color: #E8E7D8 !important;
+        color: #D6D6D6 !important;
       }
       .dark #theme-endspace [class*='text-gray-400'],
       .dark #theme-endspace [class*='text-gray-500'],
       .dark #theme-endspace [class*='text-gray-600'],
       .dark #theme-endspace [class*='text-gray-700'] {
-        color: #B8B7A8 !important;
+        color: #A6A6A6 !important;
       }
       /* 旧强调黄 #FBFB46 已在组件层替换为 var(--endspace-accent-yellow)，
          此处不再需要类名矫正 */
@@ -1251,10 +1251,10 @@ export const Style = () => {
       .dark #theme-endspace .endspace-menu-icon-wrap,
       .dark #theme-endspace .endspace-menu-icon-wrap i,
       .dark #theme-endspace .endspace-menu-icon-wrap svg {
-        color: #B8B7A8;
+        color: #A6A6A6;
       }
       .dark #theme-endspace .endspace-notion-menu-dot {
-        background: #B8B7A8;
+        background: #A6A6A6;
       }
       .dark #theme-endspace .endspace-notion-menu-class-icon.is-active,
       .dark #theme-endspace .nier-nav-item:hover .endspace-notion-menu-class-icon,
