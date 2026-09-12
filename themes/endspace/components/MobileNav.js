@@ -158,7 +158,7 @@ export const MobileNav = (props) => {
   return (
     <>
       {/* Top Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 md:hidden bg-white border-b border-[var(--endspace-border-base)] safe-area-top">
+      <nav className="fixed top-0 left-0 right-0 z-50 md:hidden bg-[var(--endspace-bg-primary)] border-b border-[var(--endspace-border-base)] safe-area-top">
         <div className="flex items-center justify-between h-20 px-5">
           {/* Left: Avatar */}
           <SmartLink href="/" title="Home" className="flex-shrink-0 flex items-center">
@@ -196,7 +196,7 @@ export const MobileNav = (props) => {
 
       {/* Slide-in Menu Panel */}
       <div 
-        className={`fixed top-20 left-0 right-0 bottom-0 z-40 md:hidden bg-white transition-transform duration-300 ease-out overflow-y-auto ${
+        className={`fixed top-20 left-0 right-0 bottom-0 z-40 md:hidden bg-[var(--endspace-bg-primary)] transition-transform duration-300 ease-out overflow-y-auto ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -207,8 +207,8 @@ export const MobileNav = (props) => {
             const isOpen = openSubMenuId === item.id
             const className = `flex items-center gap-4 py-3 w-full transition-all group ${
               activeTab === item.name
-                ? 'text-black font-bold'
-                : 'text-[var(--endspace-text-secondary)] hover:text-black'
+                ? 'text-[var(--endspace-text-primary)] font-bold'
+                : 'text-[var(--endspace-text-secondary)] hover:text-[var(--endspace-text-primary)]'
             }`
 
             if (!hasSubMenu) {
@@ -247,9 +247,9 @@ export const MobileNav = (props) => {
                         key={subItem.id || subItem.path}
                         href={subItem.path}
                         target={subItem.target}
-                        className={`block py-2 pl-4 pr-2 text-sm transition-colors hover:text-black ${
+                        className={`block py-2 pl-4 pr-2 text-sm transition-colors hover:text-[var(--endspace-text-primary)] ${
                           pathMatches(router.asPath, subItem.path)
-                            ? 'font-bold text-black'
+                            ? 'font-bold text-[var(--endspace-text-primary)]'
                             : 'text-[var(--endspace-text-secondary)]'
                         }`}
                       >

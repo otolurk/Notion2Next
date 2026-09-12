@@ -23,13 +23,13 @@ export const PostLock = ({ validPassword }) => {
       <div className="endspace-card p-8 max-w-md w-full tech-corner">
         {/* Lock Icon */}
         <div className="text-center mb-6">
-          <div className="inline-block p-6 bg-yellow-400/10 border border-yellow-400/30 mb-4">
-            <IconLock size={48} stroke={1.5} className="text-yellow-400" />
+          <div className="inline-block p-6 bg-[var(--endspace-accent-yellow-dim)] border border-[var(--endspace-accent-yellow)] mb-4">
+            <IconLock size={48} stroke={1.5} className="text-[var(--endspace-accent-yellow)]" />
           </div>
-          <h2 className="text-2xl font-bold text-white mb-2 tech-text">
+          <h2 className="text-2xl font-bold text-[var(--endspace-text-primary)] mb-2 tech-text">
             RESTRICTED ACCESS
           </h2>
-          <p className="text-gray-400 text-sm">
+          <p className="text-[var(--endspace-text-secondary)] text-sm">
             This content requires authorization
           </p>
         </div>
@@ -37,7 +37,7 @@ export const PostLock = ({ validPassword }) => {
         {/* Password Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs text-gray-500 mb-2 tech-text">
+            <label className="block text-xs text-[var(--endspace-text-muted)] mb-2 tech-text">
               ENTER_PASSWORD:
             </label>
             <input
@@ -47,7 +47,7 @@ export const PostLock = ({ validPassword }) => {
               className={`
                 w-full px-4 py-3 bg-black border tech-text
                 ${error ? 'border-red-500' : 'border-gray-700'}
-                text-white focus:border-yellow-400 focus:outline-none
+                text-white focus:border-[var(--endspace-accent-yellow)] focus:outline-none
                 transition-colors
               `}
               placeholder="Enter password..."

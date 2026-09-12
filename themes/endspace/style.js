@@ -10,6 +10,18 @@ export const Style = () => {
   return (
     <style jsx global>{`
       /* ============================================
+         全站字体 - 狸叶黑体（本地自托管）
+         文件: /public/fonts/LeeeafHei-Regular.ttf
+         ============================================ */
+      @font-face {
+        font-family: 'LeeeafHei';
+        src: url('/fonts/LeeeafHei-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* ============================================
          CSS Custom Properties - Light Industrial Theme
          ============================================ */
       :root {
@@ -35,6 +47,22 @@ export const Style = () => {
         /* Article Body Text - 日间纯黑，夜间跟随主题文字色 */
         --endspace-article-text: #000;
         --endspace-article-text-secondary: #1a1a1a;
+
+        /* ============================================
+           全站字体 —— 改字体只需改下面两行
+           --endspace-font-sans: 正文/标题字体栈（第一个是主字体）
+           --endspace-font-mono: 等宽字体（.tech-text 的日期/标签数字用）
+           注意：#theme-endspace 是 id 选择器，优先级高于 Tailwind 的
+           .font-sans 类，所以 blog.config 的 FONT_STYLE 与 conf/font.config.js
+           的 FONT_SANS/FONT_SERIF 在本主题下都不生效，必须改这里。
+           要用网络字体（如霞鹜文楷）：先在 conf/font.config.js 的 FONT_URL
+           填字体 CSS 地址，再把字体名加到下面栈的最前面。
+           ============================================ */
+        --endspace-font-sans: 'LeeeafHei', 'Inter', 'PingFang SC', -apple-system,
+          BlinkMacSystemFont, 'Microsoft YaHei', 'Noto Sans SC',
+          'Helvetica Neue', Helvetica, Arial, sans-serif;
+        --endspace-font-mono: 'JetBrains Mono', 'Cascadia Code', 'Courier New',
+          monospace;
 
         /* 分类/标签药丸（.ef-btn）底色 - 日间纯白，夜间深灰面板 */
         --endspace-btn-bg: #ffffff;
@@ -120,7 +148,7 @@ export const Style = () => {
         --endspace-border-active: var(--endspace-accent-yellow);
         background-color: var(--endspace-bg-base);
         color: var(--endspace-text-primary);
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: var(--endspace-font-sans);
         overflow-x: hidden;
         /* Custom Tech Cursor - Sharp Spearhead with Heavy Shadow */
         cursor: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M2 2 L12 28 L16 18 L26 14 L2 2 Z' fill='%2318181b' stroke='%23ffffff' stroke-width='1.5' style='filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.3));'/%3E%3C/svg%3E") 2 2, auto;
@@ -162,7 +190,7 @@ export const Style = () => {
          Typography & Technical Text
          ============================================ */
       .tech-text {
-        font-family: 'JetBrains Mono', 'Courier New', monospace;
+        font-family: var(--endspace-font-mono);
         letter-spacing: 0.5px;
         text-transform: uppercase;
         font-weight: 500;
@@ -477,7 +505,7 @@ export const Style = () => {
         border: 2px solid var(--endspace-border-active);
         color: var(--endspace-text-primary);
         padding: 0.6rem 1.5rem;
-        font-family: 'JetBrains Mono', monospace;
+        font-family: var(--endspace-font-mono);
         font-weight: 700;
         text-transform: uppercase;
         font-size: 0.85em;
@@ -499,7 +527,7 @@ export const Style = () => {
         border: none;
         color: #0a0a0a;
         padding: 0.75rem 1.5rem;
-        font-family: 'JetBrains Mono', monospace;
+        font-family: var(--endspace-font-mono);
         font-weight: 700;
         text-transform: uppercase;
         font-size: 0.85em;
@@ -701,7 +729,7 @@ export const Style = () => {
         background: var(--endspace-bg-primary);
         border: 1px solid var(--endspace-border-base);
         padding: 0.75rem 1.5rem 0.75rem 2rem;
-        font-family: 'JetBrains Mono', monospace;
+        font-family: var(--endspace-font-mono);
         font-weight: 600;
         text-transform: uppercase;
         font-size: 0.85em;
@@ -759,7 +787,7 @@ export const Style = () => {
         padding: 0.25rem 0.5rem;
         background: var(--endspace-accent-yellow);
         color: #000;
-        font-family: 'JetBrains Mono', monospace;
+        font-family: var(--endspace-font-mono);
         font-size: 0.7rem;
         font-weight: 700;
         letter-spacing: 0.5px;
@@ -1172,19 +1200,22 @@ export const Style = () => {
         color: var(--endspace-text-primary) !important;
       }
 
-      /* 例外 1：自身是强调色底（常态或悬停） */
-      .dark #theme-endspace [class*='bg-[var(--endspace-accent-yellow)]'][class*='text-black'],
-      .dark #theme-endspace [class*='bg-[var(--endspace-accent-yellow)]'] [class*='text-black'],
-      .dark #theme-endspace [class*='hover:bg-[var(--endspace-accent-yellow)]'][class*='hover:text-black']:hover,
-      .dark #theme-endspace [class*='hover:bg-[var(--endspace-accent-yellow)]']:hover [class*='text-black'] {
+      /* 例外 1：自身是强调色底（常态或悬停）
+         ⚠️ 必须用 [class~=] 精确 token 匹配。
+         用 [class*=] 会让 'bg-[var(--endspace-accent-yellow)]' 子串匹配到
+         容器上的 'hover:bg-[var(--endspace-accent-yellow)]'，
+         导致整张卡片内的 text-black 被永久锁成黑色 —— 夜间就是黑底黑字看不见。 */
+      .dark #theme-endspace [class~='bg-[var(--endspace-accent-yellow)]'][class~='text-black'],
+      .dark #theme-endspace [class~='hover:bg-[var(--endspace-accent-yellow)]']:hover [class~='text-black'],
+      .dark #theme-endspace [class~='hover:bg-[var(--endspace-accent-yellow)]'][class~='hover:text-black']:hover {
         color: #0a0a0a !important;
       }
 
       /* 例外 2：group / group/item 悬停时父级露出强调色底
          （卡片 swoosh 扫过、搜索结果整行高亮等） */
-      .dark #theme-endspace .group:hover [class*='group-hover:text-black'],
-      .dark #theme-endspace .group:hover [class*='group-hover:bg-[var(--endspace-accent-yellow)]'] [class*='text-black'],
-      .dark #theme-endspace [class*='group/item']:hover [class*='group-hover/item:text-black'] {
+      .dark #theme-endspace .group:hover [class~='group-hover:text-black'],
+      .dark #theme-endspace .group:hover [class~='group-hover:bg-[var(--endspace-accent-yellow)]'] [class~='text-black'],
+      .dark #theme-endspace [class*='group/item']:hover [class~='group-hover/item:text-black'] {
         color: #0a0a0a !important;
       }
 
