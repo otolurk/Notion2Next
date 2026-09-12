@@ -27,7 +27,7 @@ export const Style = () => {
       :root {
         /* Ethereal Whites & Grays */
         --endspace-bg-base-light: #F3F7EF;
-        --endspace-bg-base-dark: #3b3c50;
+        --endspace-bg-base-dark: #222222;
         --endspace-bg-primary-light: #ffffff;
         --endspace-bg-primary-dark: #454760;
         --endspace-bg-base: #F3F7EF;

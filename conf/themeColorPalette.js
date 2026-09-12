@@ -25,7 +25,7 @@ const THEME_COLOR_DEFAULTS = {
     TEXT_SECONDARY: '#4f5a45',
     BORDER: '#dce5d5',
     PRIMARY_DARK: '#004097',
-    BG_DARK: '#3b3c50',
+    BG_DARK: '#222222',
     CARD_DARK: '#454760',
     TEXT_DARK: '#fefef0',
     TEXT_SECONDARY_DARK: '#D6D5C5',
