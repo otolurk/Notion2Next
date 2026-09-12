@@ -188,9 +188,13 @@ const FloatingControls = ({ toc, ...props }) => {
       <div className="fixed right-4 bottom-8 z-50 flex flex-col items-end gap-2 pointer-events-none">
         {/* Capsule */}
         <div
-          className="bg-gray-400/80 backdrop-blur-sm p-1.5 rounded-full shadow-lg flex flex-row lg:flex-col gap-3 pointer-events-auto"
-          /* color-mix 生效时用主题色（80% 透明）；不支持则回退上面的 bg-gray-400/80 */
-          style={{ backgroundColor: 'color-mix(in srgb, var(--endspace-bg-tertiary) 80%, transparent)' }}
+          className="bg-gray-400/50 backdrop-blur-xl p-1.5 rounded-full shadow-lg flex flex-row lg:flex-col gap-3 pointer-events-auto border border-[var(--endspace-border-base)]"
+          /* 玻璃拟态：低透明度底色 + 高斯模糊；不支持 color-mix 时回退 bg-gray-400/50 */
+          style={{
+            backgroundColor: 'color-mix(in srgb, var(--endspace-bg-tertiary) 55%, transparent)',
+            backdropFilter: 'blur(20px) saturate(150%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(150%)'
+          }}
         >
              {/* 日间/夜间模式切换 */}
              <ControlBtn

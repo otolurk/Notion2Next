@@ -375,7 +375,7 @@ export const EndspacePlayer = ({ isExpanded, embedded = false }) => {
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); setShowPlaylist(!showPlaylist) }}
-            className="group/cover relative flex h-10 w-10 flex-shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-white/70 text-[var(--endspace-text-muted)] transition-colors hover:text-black"
+            className="group/cover relative flex h-9 w-9 flex-shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-white/70 text-[var(--endspace-text-muted)] transition-colors hover:text-black"
             title="Playlist"
           >
             <img
@@ -403,34 +403,37 @@ export const EndspacePlayer = ({ isExpanded, embedded = false }) => {
             </div>
           </div>
 
-          <div className="flex h-10 w-5 flex-shrink-0 flex-col items-center justify-between rounded-lg bg-gray-200/70 p-0.5 text-[var(--endspace-text-muted)]">
+          {/* 控制区：横排三键，保证足够的点击面积 */}
+          <div className="flex flex-shrink-0 items-center gap-0.5 text-[var(--endspace-text-muted)]">
             <button
+              type="button"
               onClick={playPrev}
-              className="flex h-3 w-4 items-center justify-center rounded transition-colors hover:bg-[var(--endspace-accent-yellow)] hover:text-black"
+              className="flex h-8 w-7 cursor-pointer items-center justify-center rounded-lg transition-colors hover:bg-[var(--endspace-accent-yellow)] hover:text-black"
               title="Previous"
             >
-              <IconPlayerTrackPrev size={10} stroke={2} className="rotate-90" />
+              <IconPlayerTrackPrev size={14} stroke={2} />
             </button>
             <button
               type="button"
-              className={`flex h-3.5 w-4 items-center justify-center rounded transition-colors hover:bg-[var(--endspace-accent-yellow)] hover:text-black ${
-                isPlaying ? 'bg-[var(--endspace-accent-yellow)] text-black' : ''
+              className={`flex h-9 w-9 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-[var(--endspace-accent-yellow)] hover:text-black ${
+                isPlaying ? 'bg-[var(--endspace-accent-yellow)] text-black' : 'bg-[var(--endspace-bg-tertiary)]'
               }`}
               onClick={togglePlay}
               title={isPlaying ? 'Pause' : 'Play'}
             >
               {isPlaying ? (
-                <IconPlayerPause size={14} stroke={2.5} />
+                <IconPlayerPause size={18} stroke={2.5} />
               ) : (
-                <IconPlayerPlay size={12} stroke={2.5} className="ml-0.5" />
+                <IconPlayerPlay size={18} stroke={2.5} className="ml-0.5" />
               )}
             </button>
             <button
+              type="button"
               onClick={playNext}
-              className="flex h-3 w-4 items-center justify-center rounded transition-colors hover:bg-[var(--endspace-accent-yellow)] hover:text-black"
+              className="flex h-8 w-7 cursor-pointer items-center justify-center rounded-lg transition-colors hover:bg-[var(--endspace-accent-yellow)] hover:text-black"
               title="Next"
             >
-              <IconPlayerTrackNext size={10} stroke={2} className="rotate-90" />
+              <IconPlayerTrackNext size={14} stroke={2} />
             </button>
           </div>
         </div>

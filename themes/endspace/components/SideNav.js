@@ -180,7 +180,7 @@ export const SideNav = (props) => {
 
   return (
     <div 
-      className={`fixed left-0 top-0 bottom-0 z-40 hidden md:flex flex-col bg-[var(--endspace-bg-base)] border-r border-[var(--endspace-border-base)] transition-all duration-300 ease-in-out shadow-md ${isHovered ? 'w-[16rem]' : 'w-[5rem]'}`}
+      className={`fixed left-0 top-0 bottom-0 z-40 hidden md:flex flex-col bg-[var(--endspace-bg-base)] border-r border-[var(--endspace-border-base)] transition-all duration-300 ease-in-out shadow-md ${isHovered ? 'w-[17rem]' : 'w-[5rem]'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -286,7 +286,7 @@ export const SideNav = (props) => {
       {/* BOTTOM SECTION - Tools & Config */}
       {/* Music Player, Contact, and Toggle */}
       <div className="flex-shrink-0 flex flex-col justify-end h-auto pb-4">
-        <div className={`mx-auto transition-[width] duration-300 ease-out ${isHovered ? 'w-[13.5rem]' : 'w-[3rem]'}`}>
+        <div className={`mx-auto transition-[width] duration-300 ease-out ${isHovered ? 'w-[14.5rem]' : 'w-[3rem]'}`}>
           <div className={`overflow-visible border border-[var(--endspace-border-base)] bg-[var(--endspace-bg-secondary)] shadow-sm transition-[border-radius] duration-200 ${isHovered ? 'h-[7rem] rounded-2xl px-3 py-2' : 'h-[6.75rem] rounded-full px-1 py-2'}`}>
             {/* Music Player Section */}
             <div className={`flex items-center justify-center ${isHovered ? 'h-[3rem]' : 'h-10'}`}>
