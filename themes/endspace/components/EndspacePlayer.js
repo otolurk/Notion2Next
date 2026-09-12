@@ -17,6 +17,7 @@ let progressTimer = null
 let mediaGuardTimer = null
 let playRequestId = 0
 let hasTriedAutoPlay = false
+let consecutiveErrors = 0 // 连续加载失败计数，防止整表死链时无限跳曲
 let sharedState = {
   isPlaying: false,
   currentTrack: 0,
@@ -56,6 +57,7 @@ const getSharedAudio = () => {
     })
   })
   sharedAudio.addEventListener('play', () => {
+    consecutiveErrors = 0
     emitSharedState({ isPlaying: true })
     startProgressTimer()
     startMediaGuard()
@@ -69,6 +71,16 @@ const getSharedAudio = () => {
   })
   sharedAudio.addEventListener('error', event => {
     console.error('Audio load error:', event)
+    // 版权死链（外链 302 到网易 404 页）等加载失败：自动跳到下一首
+    consecutiveErrors += 1
+    if (sharedAudioList.length > 0 && consecutiveErrors < sharedAudioList.length) {
+      console.warn('[EndspacePlayer] 跳过无法播放的曲目，尝试下一首')
+      playSharedTrack(getNextTrackIndex(), true)
+    } else {
+      emitSharedState({ isPlaying: false })
+      stopProgressTimer()
+      stopMediaGuard()
+    }
   })
   return sharedAudio
 }

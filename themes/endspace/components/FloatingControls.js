@@ -14,7 +14,7 @@ const FloatingControls = ({ toc, ...props }) => {
   const [activeTab, setActiveTab] = useState(null) // 'logs' | 'toc'
   const [percent, setPercent] = useState(0)
   const [activeSection, setActiveSection] = useState(null)
-  const { isDarkMode, updateDarkMode } = useGlobal()
+  const { isDarkMode, toggleDarkMode } = useGlobal()
   
   // -- TOC Logic --
   useEffect(() => {

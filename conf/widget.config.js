@@ -25,14 +25,8 @@ module.exports = {
     process.env.NEXT_PUBLIC_MUSIC_PLAYER_CDN_URL ||
     'https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js',
   MUSIC_PLAYER_ORDER: process.env.NEXT_PUBLIC_MUSIC_PLAYER_ORDER || 'list', // 默认播放方式，顺序 list，随机 random
-  MUSIC_PLAYER_AUDIO_LIST: [
-    // 网易云歌单 2365527095，共 123 首
-    {
-      name: 'Shooting Star',
-      artist: 'Anna Yvette',
-      url: 'https://music.163.com/song/media/outer/url?id=1446496464.mp3',
-      cover: 'https://p2.music.126.net/SwM0ldEj_X_zwlu-ABg5PA==/109951164970061170.jpg'
-    },
+    MUSIC_PLAYER_AUDIO_LIST: [
+    // 网易云歌单 2365527095，共 71 首（已剔除 52 首外链 404 的版权死链）
     {
       name: 'Feel Alright',
       artist: 'Poolside',
@@ -73,12 +67,6 @@ module.exports = {
       name: 'Caffeine',
       artist: 'Urbandawn',
       url: 'https://music.163.com/song/media/outer/url?id=1312569785.mp3',
-      cover: 'https://p2.music.126.net/_IRAcM1FF8rzwr8p_cUCLA==/109951172287717009.jpg'
-    },
-    {
-      name: 'Dawnbreaker',
-      artist: 'Metrik',
-      url: 'https://music.163.com/song/media/outer/url?id=1312570608.mp3',
       cover: 'https://p2.music.126.net/_IRAcM1FF8rzwr8p_cUCLA==/109951172287717009.jpg'
     },
     {
@@ -184,12 +172,6 @@ module.exports = {
       cover: 'https://p1.music.126.net/_IRAcM1FF8rzwr8p_cUCLA==/109951172287717009.jpg'
     },
     {
-      name: 'Silhouette',
-      artist: 'Goldroom',
-      url: 'https://music.163.com/song/media/outer/url?id=419549837.mp3',
-      cover: 'https://p1.music.126.net/HIEFY5HorR7jOQjHCk2ygA==/109951163608676981.jpg'
-    },
-    {
       name: 'Loyal',
       artist: 'ODESZA',
       url: 'https://music.163.com/song/media/outer/url?id=1309489380.mp3',
@@ -208,34 +190,16 @@ module.exports = {
       cover: 'https://p1.music.126.net/6LY-WqKaEYcdT9Y4Dl5lww==/109951164388851313.jpg'
     },
     {
-      name: 'Silence',
-      artist: 'Marshmello/Khalid',
-      url: 'https://music.163.com/song/media/outer/url?id=497218032.mp3',
-      cover: 'https://p1.music.126.net/W9ZGGAsCC-5v9xRKDVU4WQ==/109951169434616914.jpg'
-    },
-    {
       name: 'Rapper\'s Delight',
       artist: 'The Sugarhill Gang',
       url: 'https://music.163.com/song/media/outer/url?id=3597774.mp3',
       cover: 'https://p2.music.126.net/J31pZCoBzLjzZZUVgl8wYg==/1709740581199104.jpg'
     },
     {
-      name: 'Good Morning (Just Kiddin Remix)',
-      artist: 'Max Frost',
-      url: 'https://music.163.com/song/media/outer/url?id=560031458.mp3',
-      cover: 'https://p2.music.126.net/ik_mA25PKeS62CqxBZ1H2w==/109951163679570510.jpg'
-    },
-    {
       name: 'Find Yourself (Ashworth Remix)',
       artist: 'Great Good Fine OK/Before You Exit/Ashworth',
       url: 'https://music.163.com/song/media/outer/url?id=515453551.mp3',
       cover: 'https://p2.music.126.net/oD1gJ7WuFYzJVbKRLPA5sQ==/109951164643067550.jpg'
-    },
-    {
-      name: 'Suite bergamasque, L.75 - 3. Clair de lune',
-      artist: 'Pascal Rogé',
-      url: 'https://music.163.com/song/media/outer/url?id=27682855.mp3',
-      cover: 'https://p2.music.126.net/H72zDmRPllfU_8C53kdURQ==/109951164358100415.jpg'
     },
     {
       name: 'Carmen : Suite no. 2 - habanera',
@@ -262,18 +226,6 @@ module.exports = {
       cover: 'https://p2.music.126.net/2pJhZw_aTtEPEoPikZBrsQ==/3298534886070551.jpg'
     },
     {
-      name: 'Symphony No. 40 in G Minor, K. 550:I. Molto allegro',
-      artist: 'Academy of St. Martin in the Fields/John Fraser/Neville Marriner/Stuart Eltham',
-      url: 'https://music.163.com/song/media/outer/url?id=22340575.mp3',
-      cover: 'https://p2.music.126.net/FK4nib052jHk0cITCn37uQ==/109951168879743918.jpg'
-    },
-    {
-      name: 'Symphony No.8 In F Op.93:4. Allegro vivace (Live At Musikverein, Vienna / 1978)',
-      artist: 'Wiener Philharmoniker/Leonard Bernstein',
-      url: 'https://music.163.com/song/media/outer/url?id=1683149.mp3',
-      cover: 'https://p2.music.126.net/wqMUlkpCdJpj4VebiYx1uQ==/109951169036579031.jpg'
-    },
-    {
       name: 'Frühlingsstimmen, Walzer, Op. 410',
       artist: 'Mariss Jansons/Wiener Philharmoniker',
       url: 'https://music.163.com/song/media/outer/url?id=4430230.mp3',
@@ -284,12 +236,6 @@ module.exports = {
       artist: 'Johann Sebastian Bach',
       url: 'https://music.163.com/song/media/outer/url?id=5057458.mp3',
       cover: 'https://p2.music.126.net/V6A67qCoJrKDWAK1APYlxw==/2476100185797939.jpg'
-    },
-    {
-      name: 'Pachelbel: Canon in D, P. 37',
-      artist: 'Johann Pachelbel',
-      url: 'https://music.163.com/song/media/outer/url?id=5084630.mp3',
-      cover: 'https://p2.music.126.net/YDyutY4qZcUk47_K6r8Xyw==/6623458046303649.jpg'
     },
     {
       name: 'The Planets, Suite for Large Orchestra, Op. 32:Jupiter, The Bringer of Jollity',
@@ -328,24 +274,6 @@ module.exports = {
       cover: 'https://p2.music.126.net/k1ZjMHhKUaEb6PHV6X7PCw==/109951170978814772.jpg'
     },
     {
-      name: 'All The Stars',
-      artist: 'Kendrick Lamar/SZA',
-      url: 'https://music.163.com/song/media/outer/url?id=526929981.mp3',
-      cover: 'https://p2.music.126.net/5l8I9Q-MJDRdDGDGFXmeRQ==/109951167135761786.jpg'
-    },
-    {
-      name: 'Don\'t Sweat The Technique',
-      artist: 'Eric B. & Rakim',
-      url: 'https://music.163.com/song/media/outer/url?id=17541676.mp3',
-      cover: 'https://p2.music.126.net/NXaL-3yT1gACRqb9OvaobA==/109951169852788273.jpg'
-    },
-    {
-      name: 'Rent',
-      artist: 'Big Freedia',
-      url: 'https://music.163.com/song/media/outer/url?id=546608712.mp3',
-      cover: 'https://p2.music.126.net/gHG0N2S2byeMo-rs-oRhTQ==/109951163315236743.jpg'
-    },
-    {
       name: 'Tunnel Vision',
       artist: 'Subtact',
       url: 'https://music.163.com/song/media/outer/url?id=433681317.mp3',
@@ -370,22 +298,10 @@ module.exports = {
       cover: 'https://p2.music.126.net/A0vqLgf8MCeAcnniD7sMbg==/109951163486449441.jpg'
     },
     {
-      name: '17 (In the Air Dub)',
-      artist: 'MK',
-      url: 'https://music.163.com/song/media/outer/url?id=507924122.mp3',
-      cover: 'https://p2.music.126.net/NU0Fwg150VNUXxYOru72VQ==/109951165983918079.jpg'
-    },
-    {
       name: 'Kids (Soulwax Remix)',
       artist: 'MGMT',
       url: 'https://music.163.com/song/media/outer/url?id=4898524.mp3',
       cover: 'https://p2.music.126.net/P0lGq6I1h2Be62rz5Y_iPQ==/1650366953301582.jpg'
-    },
-    {
-      name: 'Fly',
-      artist: 'Marshmello/Leau Culver',
-      url: 'https://music.163.com/song/media/outer/url?id=543988435.mp3',
-      cover: 'https://p2.music.126.net/h5RC8UrYc_Kdhsn4KVYpoA==/109951164951886186.jpg'
     },
     {
       name: 'State Of Confusion (The Maurice Fulton Remix)',
@@ -400,22 +316,10 @@ module.exports = {
       cover: 'https://p2.music.126.net/AEQHHNmRki9ItwkE6NFgBA==/109951168980013069.jpg'
     },
     {
-      name: 'Little Of Your Love (BloodPop® Remix)',
-      artist: 'HAIM/BloodPop',
-      url: 'https://music.163.com/song/media/outer/url?id=497494031.mp3',
-      cover: 'https://p2.music.126.net/dT-dFoqiNuU8RA_v0CxKQw==/18856624416441602.jpg'
-    },
-    {
       name: 'Deadly Valentine',
       artist: 'Charlotte Gainsbourg',
       url: 'https://music.163.com/song/media/outer/url?id=507712526.mp3',
       cover: 'https://p2.music.126.net/nDmYf-aYxaT1h8IePy7N9Q==/18336555416998638.jpg'
-    },
-    {
-      name: 'Colors',
-      artist: 'Beck',
-      url: 'https://music.163.com/song/media/outer/url?id=512648448.mp3',
-      cover: 'https://p2.music.126.net/dweXlFEP1HJuFBk2Mr4SIA==/109951163277806037.jpg'
     },
     {
       name: 'The Trials (From "Halo 5: Guardians")',
@@ -424,52 +328,10 @@ module.exports = {
       cover: 'https://p2.music.126.net/Ixfw9HPaRXu9IjTH495RYA==/109951163298909539.jpg'
     },
     {
-      name: 'Voices of Spring, Op.410 (Frühlingsstimmen) - vocal version',
-      artist: 'Kathleen Battle/Wiener Philharmoniker/Herbert von Karajan',
-      url: 'https://music.163.com/song/media/outer/url?id=1458550.mp3',
-      cover: 'https://p2.music.126.net/OOkNwCuFD7HeFPAmKi0d0A==/109951165867973576.jpg'
-    },
-    {
-      name: 'Headphones',
-      artist: 'Walk The Moon',
-      url: 'https://music.163.com/song/media/outer/url?id=517647139.mp3',
-      cover: 'https://p2.music.126.net/s4CBBo54f0nLAf4EhCG-NQ==/109951165969061513.jpg'
-    },
-    {
-      name: 'Rapture',
-      artist: 'Underoath',
-      url: 'https://music.163.com/song/media/outer/url?id=550169344.mp3',
-      cover: 'https://p2.music.126.net/73XKC_YOc8xRbq4yuSMWhQ==/109951166074369686.jpg'
-    },
-    {
       name: 'Sister Cities',
       artist: 'The Wonder Years',
       url: 'https://music.163.com/song/media/outer/url?id=554191502.mp3',
       cover: 'https://p2.music.126.net/s_1vLxsiRMd2UFqGpiRc5A==/109951163351887820.jpg'
-    },
-    {
-      name: 'Run For Cover',
-      artist: 'The Killers',
-      url: 'https://music.163.com/song/media/outer/url?id=493448220.mp3',
-      cover: 'https://p2.music.126.net/55mZ0jdw0c1pS1HpURuJxQ==/109951169146945482.jpg'
-    },
-    {
-      name: 'Satellite',
-      artist: 'STARSET',
-      url: 'https://music.163.com/song/media/outer/url?id=454730050.mp3',
-      cover: 'https://p2.music.126.net/MYIl1dPJCMt0ay9zmIJRtQ==/17783501068032491.jpg'
-    },
-    {
-      name: 'Deathwish',
-      artist: 'Red Sun Rising',
-      url: 'https://music.163.com/song/media/outer/url?id=548103695.mp3',
-      cover: 'https://p2.music.126.net/NWMX9pw2ccBoujXHX1GSJg==/109951163213644068.jpg'
-    },
-    {
-      name: 'The Evil Has Landed',
-      artist: 'Queens of the Stone Age',
-      url: 'https://music.163.com/song/media/outer/url?id=496517059.mp3',
-      cover: 'https://p2.music.126.net/2Elk3bSGcZ2ign_ePGY5kA==/109951167526215170.jpg'
     },
     {
       name: 'Can\'t Be Ignored',
@@ -478,40 +340,10 @@ module.exports = {
       cover: 'https://p2.music.126.net/5fhAaZ4uQKOl0RpqhexGgQ==/109951167745214484.jpg'
     },
     {
-      name: 'Over and Over and Over',
-      artist: 'Jack White',
-      url: 'https://music.163.com/song/media/outer/url?id=542871693.mp3',
-      cover: 'https://p2.music.126.net/HpmUua8uMF4RSIyoGkNViA==/109951165983902794.jpg'
-    },
-    {
-      name: 'Rise',
-      artist: 'I Prevail',
-      url: 'https://music.163.com/song/media/outer/url?id=436633191.mp3',
-      cover: 'https://p2.music.126.net/rZpkYTUOeykQxTloPt5ePg==/18248594486650089.jpg'
-    },
-    {
       name: 'Six Wave Hold-Down',
       artist: 'Hot Snakes',
       url: 'https://music.163.com/song/media/outer/url?id=530202502.mp3',
       cover: 'https://p2.music.126.net/-1INQBpNGqvkYnJGkGh14g==/109951163831876706.jpg'
-    },
-    {
-      name: 'Safari Song',
-      artist: 'Greta Van Fleet',
-      url: 'https://music.163.com/song/media/outer/url?id=518053979.mp3',
-      cover: 'https://p2.music.126.net/Ogh_Z2U4_egjmdQsS5LXHw==/109951169303193983.jpg'
-    },
-    {
-      name: 'La Dee Da',
-      artist: 'Foo Fighters',
-      url: 'https://music.163.com/song/media/outer/url?id=506139689.mp3',
-      cover: 'https://p2.music.126.net/UxNxSgV0BLgnBsAigoGdEA==/109951166964633766.jpg'
-    },
-    {
-      name: 'Die Trying',
-      artist: 'Eyes Set to Kill',
-      url: 'https://music.163.com/song/media/outer/url?id=537012235.mp3',
-      cover: 'https://p2.music.126.net/L7n3j3TQno4LlK8taoHhFQ==/109951165982232984.jpg'
     },
     {
       name: 'Pastel City',
@@ -532,64 +364,10 @@ module.exports = {
       cover: 'https://p2.music.126.net/Zlnq4MLo7Mqg8ASfetVWcg==/109951163361048048.jpg'
     },
     {
-      name: 'I Don\'t Wanna Know',
-      artist: 'Bass Drum of Death',
-      url: 'https://music.163.com/song/media/outer/url?id=1296656170.mp3',
-      cover: 'https://p2.music.126.net/bgb-XsCkmuN-Fnet2iJ6WA==/109951165984017438.jpg'
-    },
-    {
-      name: 'No Wolf Like The Present',
-      artist: 'At the Drive-In',
-      url: 'https://music.163.com/song/media/outer/url?id=476323436.mp3',
-      cover: 'https://p2.music.126.net/BdEOX9H8K8H676j53kR9GA==/109951172616530372.jpg'
-    },
-    {
-      name: 'Symphony',
-      artist: 'Towkio/Teddy Jackson',
-      url: 'https://music.163.com/song/media/outer/url?id=540586421.mp3',
-      cover: 'https://p2.music.126.net/RLmHhX4TivpFQ7lSYOSOvQ==/109951163159639605.jpg'
-    },
-    {
       name: 'Don\'t Rush (feat. Patrick Pryor)',
       artist: 'Ric Wilson',
       url: 'https://music.163.com/song/media/outer/url?id=573283319.mp3',
       cover: 'https://p2.music.126.net/tfyAhIaUtLOBdYuO_sEbzA==/109951164469730499.jpg'
-    },
-    {
-      name: 'i',
-      artist: 'Kendrick Lamar',
-      url: 'https://music.163.com/song/media/outer/url?id=29418533.mp3',
-      cover: 'https://p2.music.126.net/ThzAET8JDX7i2Pku5uua_Q==/2532175278979695.jpg'
-    },
-    {
-      name: 'Bad Love',
-      artist: 'Earl St. Clair',
-      url: 'https://music.163.com/song/media/outer/url?id=463164514.mp3',
-      cover: 'https://p2.music.126.net/ULk6mm6Yaudtk_J0x3mrdQ==/18362943696222091.jpg'
-    },
-    {
-      name: 'WAKE UP!',
-      artist: 'DUCKWRTH/Troi Irons',
-      url: 'https://music.163.com/song/media/outer/url?id=516765097.mp3',
-      cover: 'https://p2.music.126.net/jx5kCRmmQDgVC9Kd4UcoCg==/109951166027111436.jpg'
-    },
-    {
-      name: 'MICHUUL.',
-      artist: 'DUCKWRTH',
-      url: 'https://music.163.com/song/media/outer/url?id=516765094.mp3',
-      cover: 'https://p2.music.126.net/jx5kCRmmQDgVC9Kd4UcoCg==/109951166027111436.jpg'
-    },
-    {
-      name: 'Rebirth Of Slick (Cool Like Dat)',
-      artist: 'Digable Planets',
-      url: 'https://music.163.com/song/media/outer/url?id=17433970.mp3',
-      cover: 'https://p1.music.126.net/_DYlNA2pO3xBDUkpShkcig==/109951173144691451.jpg'
-    },
-    {
-      name: 'Karaoke',
-      artist: 'Big Freedia/Lizzo',
-      url: 'https://music.163.com/song/media/outer/url?id=567723386.mp3',
-      cover: 'https://p1.music.126.net/ZEvYEQrbZlcbemwjsn_zAg==/109951163735199169.jpg'
     },
     {
       name: '\'Til It\'s Over',
@@ -616,34 +394,10 @@ module.exports = {
       cover: 'https://p1.music.126.net/qwOKOco4w3UUTlZ8e9rVZQ==/109951163234008427.jpg'
     },
     {
-      name: 'Baby I\'m A Queen',
-      artist: 'Sofi Tukker',
-      url: 'https://music.163.com/song/media/outer/url?id=541687793.mp3',
-      cover: 'https://p1.music.126.net/fdVec6eMhXsrl3haVkQb9g==/109951169025243945.jpg'
-    },
-    {
-      name: 'Wind Shear',
-      artist: 'Pierce Fulton',
-      url: 'https://music.163.com/song/media/outer/url?id=488388059.mp3',
-      cover: 'https://p1.music.126.net/cp-UO88YwjftDDO44YPUbg==/109951164935515580.jpg'
-    },
-    {
-      name: 'Last Forever',
-      artist: 'Sam Sparro/Oliver',
-      url: 'https://music.163.com/song/media/outer/url?id=501475196.mp3',
-      cover: 'https://p1.music.126.net/GZKjtLo0SSjiSVlWh6iaDA==/17640564556476228.jpg'
-    },
-    {
       name: 'Late Night',
       artist: 'ODESZA',
       url: 'https://music.163.com/song/media/outer/url?id=474932031.mp3',
       cover: 'https://p1.music.126.net/7ZBRErmBEkuDnlU7qkuPjQ==/769658149717160.jpg'
-    },
-    {
-      name: 'A Moment Apart',
-      artist: 'ODESZA',
-      url: 'https://music.163.com/song/media/outer/url?id=484249650.mp3',
-      cover: 'https://p1.music.126.net/GZhO2mRo5Jw4IM47PbbuVg==/109951169996847592.jpg'
     },
     {
       name: 'MJ',
@@ -664,76 +418,16 @@ module.exports = {
       cover: 'https://p1.music.126.net/qjK_vbKNXe5SppKidjyIYQ==/109951163129067131.jpg'
     },
     {
-      name: 'Clap Your Hands (feat. Ava Max)',
-      artist: 'Le Youth/Ava Max',
-      url: 'https://music.163.com/song/media/outer/url?id=495399037.mp3',
-      cover: 'https://p1.music.126.net/STdLYNP79SA98aru7i0iJg==/109951163816576548.jpg'
-    },
-    {
-      name: 'Fake It Til You Make It',
-      artist: 'Dreamers',
-      url: 'https://music.163.com/song/media/outer/url?id=866065475.mp3',
-      cover: 'https://p1.music.126.net/QiJ4-xvK1EfatVJQw9NYzA==/109951163405947121.jpg'
-    },
-    {
       name: 'Deadly Valentine (Radio Edit)',
       artist: 'Charlotte Gainsbourg',
       url: 'https://music.163.com/song/media/outer/url?id=507712527.mp3',
       cover: 'https://p1.music.126.net/_CC6KyZ9eU0AyFrk0i879Q==/18337654928626451.jpg'
     },
     {
-      name: 'Never Say Die',
-      artist: 'CHVRCHES',
-      url: 'https://music.163.com/song/media/outer/url?id=548103539.mp3',
-      cover: 'https://p1.music.126.net/0lQjByvJe55nqipu5mPlAw==/109951166054817350.jpg'
-    },
-    {
-      name: 'Dreams (Colors Mix)',
-      artist: 'Beck',
-      url: 'https://music.163.com/song/media/outer/url?id=512648450.mp3',
-      cover: 'https://p1.music.126.net/dweXlFEP1HJuFBk2Mr4SIA==/109951163277806037.jpg'
-    },
-    {
-      name: 'Ching Ching',
-      artist: 'Wolfgang Gartner',
-      url: 'https://music.163.com/song/media/outer/url?id=548950017.mp3',
-      cover: 'https://p1.music.126.net/HOfYN1RvexXc6ZpNYau22A==/109951163220750477.jpg'
-    },
-    {
-      name: 'The Man (Jacques Lu Cont Remix)',
-      artist: 'The Killers/Jacques Lu Cont',
-      url: 'https://music.163.com/song/media/outer/url?id=508068018.mp3',
-      cover: 'https://p1.music.126.net/d7ofvZWwo0ELfkCL--oLxg==/109951169146740488.jpg'
-    },
-    {
-      name: 'I Wanna Know',
-      artist: 'RL Grime/Daya',
-      url: 'https://music.163.com/song/media/outer/url?id=545589140.mp3',
-      cover: 'https://p1.music.126.net/RMsnj27y-zFiTPufD6fBvw==/109951168705309393.jpg'
-    },
-    {
-      name: 'Ottomatic',
-      artist: 'Oliver',
-      url: 'https://music.163.com/song/media/outer/url?id=501475193.mp3',
-      cover: 'https://p1.music.126.net/GZKjtLo0SSjiSVlWh6iaDA==/17640564556476228.jpg'
-    },
-    {
-      name: 'Silence (Blonde Remix)',
-      artist: 'Marshmello/Khalid/Blonde',
-      url: 'https://music.163.com/song/media/outer/url?id=514179946.mp3',
-      cover: 'https://p1.music.126.net/XPfz4VqmFwsCwZja1makAw==/109951165983253568.jpg'
-    },
-    {
       name: 'Kids',
       artist: 'MGMT',
       url: 'https://music.163.com/song/media/outer/url?id=1699315.mp3',
       cover: 'https://p1.music.126.net/L-rDOH5s3UvGKrW8ia8jGQ==/109951172164722977.jpg'
-    },
-    {
-      name: 'Midnight City (Eric Prydz Private Remix)',
-      artist: 'M83/Eric Prydz',
-      url: 'https://music.163.com/song/media/outer/url?id=16957771.mp3',
-      cover: 'https://p1.music.126.net/bk6BxxW-CcNflUaM2wW6OA==/109951169316474379.jpg'
     },
     {
       name: 'Do You Don\'t You',
@@ -752,12 +446,6 @@ module.exports = {
       artist: 'Flosstradamus/24hrs',
       url: 'https://music.163.com/song/media/outer/url?id=524270707.mp3',
       cover: 'https://p1.music.126.net/6vViiAhVi4-HQjna0VPuXA==/109951167026143835.jpg'
-    },
-    {
-      name: '17',
-      artist: 'MK',
-      url: 'https://music.163.com/song/media/outer/url?id=501846795.mp3',
-      cover: 'https://p2.music.126.net/1s9hwo4bBrFn8J1Q2Vtkkg==/109951165982382722.jpg'
     },
     {
       name: 'Find Yourself',
