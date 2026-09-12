@@ -200,7 +200,7 @@ const FloatingControls = ({ toc, ...props }) => {
              <ControlBtn
                 icon={isDarkMode ? IconSun : IconMoonStars}
                 label={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-                onClick={() => updateDarkMode(!isDarkMode)}
+                onClick={() => toggleDarkMode()}
                 iconClassName={ICON_DEFAULT}
                 iconSize={24}
              />

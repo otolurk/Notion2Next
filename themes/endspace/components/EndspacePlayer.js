@@ -73,7 +73,9 @@ const getSharedAudio = () => {
     console.error('Audio load error:', event)
     // 版权死链（外链 302 到网易 404 页）等加载失败：自动跳到下一首
     consecutiveErrors += 1
-    if (sharedAudioList.length > 0 && consecutiveErrors < sharedAudioList.length) {
+    // 连续超过 MAX_SKIP_ON_ERROR 首无法播放则停止尝试，避免死链表里无限跳曲
+    const MAX_SKIP_ON_ERROR = 5
+    if (sharedAudioList.length > 0 && consecutiveErrors < MAX_SKIP_ON_ERROR) {
       console.warn('[EndspacePlayer] 跳过无法播放的曲目，尝试下一首')
       playSharedTrack(getNextTrackIndex(), true)
     } else {

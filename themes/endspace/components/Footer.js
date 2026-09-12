@@ -12,6 +12,12 @@ export const Footer = ({ title }) => {
     <footer className="relative mt-20 bg-[#252726] text-gray-300 overflow-hidden">
       {/* Spectrum Bar Top */}
       <div className="spectrum-bar opacity-30" />
+      {/* 线中央向下折一下的效果：V 形折角，颜色跟随渐变中点的强调色 */}
+      <div className="flex justify-center pointer-events-none" aria-hidden="true" style={{ marginTop: '-1px' }}>
+        <svg className="opacity-30" width="56" height="10" viewBox="0 0 56 10" fill="none">
+          <path d="M0 1 L20 1 L28 9 L36 1 L56 1" stroke="var(--endspace-accent-yellow)" strokeWidth="2" />
+        </svg>
+      </div>
       
       {/* Content - centered relative to viewport */}
       <div className="py-6 md:py-8 space-y-3 md:space-y-4 px-4">
