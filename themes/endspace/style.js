@@ -63,6 +63,10 @@ export const Style = () => {
           'Helvetica Neue', Helvetica, Arial, sans-serif;
         --endspace-font-mono: 'JetBrains Mono', 'Cascadia Code', 'Courier New',
           monospace;
+        /* 文章正文专用字体栈 —— 不含狸叶黑体，文章内容不使用上传字体 */
+        --endspace-font-article: 'Inter', 'PingFang SC', -apple-system,
+          BlinkMacSystemFont, 'Microsoft YaHei', 'Noto Sans SC',
+          'Helvetica Neue', Helvetica, Arial, sans-serif;
 
         /* 分类/标签药丸（.ef-btn）底色 - 日间纯白，夜间深灰面板 */
         --endspace-btn-bg: #ffffff;
@@ -387,6 +391,8 @@ export const Style = () => {
       #theme-endspace #notion-article .notion-code,
       #theme-endspace #notion-article .notion-equation {
         color: var(--endspace-article-text) !important;
+        /* 文章内容不使用上传的狸叶黑体 */
+        font-family: var(--endspace-font-article) !important;
       }
 
       #theme-endspace #notion-article p,
@@ -1212,10 +1218,12 @@ export const Style = () => {
       }
 
       /* 例外 2：group / group/item 悬停时父级露出强调色底
-         （卡片 swoosh 扫过、搜索结果整行高亮等） */
-      .dark #theme-endspace .group:hover [class~='group-hover:text-black'],
+         （卡片 swoosh 扫过、搜索结果整行高亮等）
+         用 [class*=] 子串匹配以覆盖透明度变体
+         group-hover:text-black/60、/70 —— 这些也是「强调色底上的黑字」语义 */
+      .dark #theme-endspace .group:hover [class*='group-hover:text-black'],
       .dark #theme-endspace .group:hover [class~='group-hover:bg-[var(--endspace-accent-yellow)]'] [class~='text-black'],
-      .dark #theme-endspace [class*='group/item']:hover [class~='group-hover/item:text-black'] {
+      .dark #theme-endspace [class*='group/item']:hover [class*='group-hover/item:text-black'] {
         color: #0a0a0a !important;
       }
 

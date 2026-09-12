@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import throttle from 'lodash.throttle'
 import { uuidToId } from 'notion-utils'
-import { IconClock, IconListTree, IconArrowUp, IconX, IconMessage } from '@tabler/icons-react'
+import { IconClock, IconListTree, IconArrowUp, IconX, IconMessage, IconSun, IconMoonStars } from '@tabler/icons-react'
 import { SideBar } from './SideBar'
+import { useGlobal } from '@/lib/global'
 
 /**
  * FloatingControls Component
@@ -13,6 +14,7 @@ const FloatingControls = ({ toc, ...props }) => {
   const [activeTab, setActiveTab] = useState(null) // 'logs' | 'toc'
   const [percent, setPercent] = useState(0)
   const [activeSection, setActiveSection] = useState(null)
+  const { isDarkMode, updateDarkMode } = useGlobal()
   
   // -- TOC Logic --
   useEffect(() => {
@@ -190,6 +192,15 @@ const FloatingControls = ({ toc, ...props }) => {
           /* color-mix 生效时用主题色（80% 透明）；不支持则回退上面的 bg-gray-400/80 */
           style={{ backgroundColor: 'color-mix(in srgb, var(--endspace-bg-tertiary) 80%, transparent)' }}
         >
+             {/* 日间/夜间模式切换 */}
+             <ControlBtn
+                icon={isDarkMode ? IconSun : IconMoonStars}
+                label={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+                onClick={() => updateDarkMode(!isDarkMode)}
+                iconClassName={ICON_DEFAULT}
+                iconSize={24}
+             />
+
              {/* LOGS */}
              <ControlBtn 
                 icon={IconClock} 
