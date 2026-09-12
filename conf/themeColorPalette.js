@@ -24,12 +24,12 @@ const THEME_COLOR_DEFAULTS = {
     TEXT: '#1a2413',
     TEXT_SECONDARY: '#4f5a45',
     BORDER: '#dce5d5',
-    PRIMARY_DARK: '#BFFF00',
-    BG_DARK: '#222222',
-    CARD_DARK: '#2b2b2b',
-    TEXT_DARK: '#f2f2f2',
-    TEXT_SECONDARY_DARK: '#c2c2c2',
-    BORDER_DARK: '#454545'
+    PRIMARY_DARK: '#0F127A',
+    BG_DARK: '#004469',
+    CARD_DARK: '#0B527B',
+    TEXT_DARK: '#38BDF8',
+    TEXT_SECONDARY_DARK: '#9CCFEE',
+    BORDER_DARK: '#1E6B99'
   }
 }
 

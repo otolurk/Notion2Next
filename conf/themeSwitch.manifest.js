@@ -29,12 +29,12 @@ export const THEME_SWITCH_MANIFEST = {
       { key: 'ENDSPACE_COLOR_ACCENT', cssVar: '--endspace-accent-yellow-light', label: '强调色', defaultValue: '#B6E23A' },
       { key: 'ENDSPACE_COLOR_ACCENT_DIM', cssVar: '--endspace-accent-yellow-dim-light', label: '弱强调色', defaultValue: 'rgba(182, 226, 58, 0.15)' },
       { key: 'ENDSPACE_COLOR_BORDER', cssVar: '--endspace-border-base-light', label: '边框', defaultValue: '#dce5d5' },
-      { key: 'ENDSPACE_COLOR_BG_BASE_DARK', cssVar: '--endspace-bg-base-dark', label: '深色模式：页面背景', defaultValue: '#222222' },
-      { key: 'ENDSPACE_COLOR_SURFACE_DARK', cssVar: '--endspace-bg-primary-dark', label: '深色模式：卡片背景', defaultValue: '#2b2b2b' },
-      { key: 'ENDSPACE_COLOR_TEXT_DARK', cssVar: '--endspace-text-primary-dark', label: '深色模式：主文字', defaultValue: '#f2f2f2' },
-      { key: 'ENDSPACE_COLOR_TEXT_SECONDARY_DARK', cssVar: '--endspace-text-secondary-dark', label: '深色模式：次级文字', defaultValue: '#c2c2c2' },
-      { key: 'ENDSPACE_COLOR_BORDER_DARK', cssVar: '--endspace-border-base-dark', label: '深色模式：边框', defaultValue: '#454545' },
-      { key: 'ENDSPACE_COLOR_ACCENT_DARK', cssVar: '--endspace-accent-yellow-dark', label: '深色模式：强调色', defaultValue: '#BFFF00' }
+      { key: 'ENDSPACE_COLOR_BG_BASE_DARK', cssVar: '--endspace-bg-base-dark', label: '深色模式：页面背景', defaultValue: '#004469' },
+      { key: 'ENDSPACE_COLOR_SURFACE_DARK', cssVar: '--endspace-bg-primary-dark', label: '深色模式：卡片背景', defaultValue: '#0B527B' },
+      { key: 'ENDSPACE_COLOR_TEXT_DARK', cssVar: '--endspace-text-primary-dark', label: '深色模式：主文字', defaultValue: '#38BDF8' },
+      { key: 'ENDSPACE_COLOR_TEXT_SECONDARY_DARK', cssVar: '--endspace-text-secondary-dark', label: '深色模式：次级文字', defaultValue: '#9CCFEE' },
+      { key: 'ENDSPACE_COLOR_BORDER_DARK', cssVar: '--endspace-border-base-dark', label: '深色模式：边框', defaultValue: '#1E6B99' },
+      { key: 'ENDSPACE_COLOR_ACCENT_DARK', cssVar: '--endspace-accent-yellow-dark', label: '深色模式：强调色', defaultValue: '#0F127A' }
     ]
   }
 }
