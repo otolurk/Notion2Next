@@ -67,6 +67,8 @@ export const Style = () => {
         --endspace-font-article: 'Inter', 'PingFang SC', -apple-system,
           BlinkMacSystemFont, 'Microsoft YaHei', 'Noto Sans SC',
           'Helvetica Neue', Helvetica, Arial, sans-serif;
+        /* 文章正文字重：觉得细就调这个值（400 常规 / 500 中等 / 600 加粗） */
+        --endspace-article-font-weight: 400;
 
         /* 分类/标签药丸（.ef-btn）底色 - 日间纯白，夜间深灰面板 */
         --endspace-btn-bg: #ffffff;
@@ -356,6 +358,8 @@ export const Style = () => {
         color: var(--endspace-text-primary);
         font-size: 1.05rem;
         line-height: 1.75;
+        /* 正文字重跟随变量，标题/加粗元素各自声明权重不受影响 */
+        font-weight: var(--endspace-article-font-weight);
       }
 
       #theme-endspace #article-wrapper,
