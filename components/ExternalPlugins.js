@@ -268,7 +268,9 @@ const ExternalPlugin = props => {
       {FIREWORKS && <Fireworks />}
       {SAKURA && <Sakura />}
       {STARRY_SKY && <StarrySky />}
-      {MUSIC_PLAYER && <MusicPlayer />}
+      {/* 全局 APlayer 已停用：endspace 主题自带播放器（侧栏 EndspacePlayer），
+          两个同时挂载会出现双播放器，且 APlayer 的固定歌词面板不需要。
+          注：MUSIC_PLAYER 这个开关仍被 EndspacePlayer 使用，不要设为 false。 */}
       {NEST && <Nest />}
       {FLUTTERINGRIBBON && <FlutteringRibbon />}
       {COMMENT_TWIKOO_COUNT_ENABLE && <TwikooCommentCounter {...props} />}
@@ -552,7 +554,7 @@ const Analytics = dynamic(
     }),
   { ssr: false }
 )
-const MusicPlayer = dynamic(() => import('@/components/Player'), { ssr: false })
+// 全局 APlayer（@/components/Player）已停用，见下方渲染处注释
 const Ackee = dynamic(() => import('@/components/Ackee'), { ssr: false })
 const Gtag = dynamic(() => import('@/components/Gtag'), { ssr: false })
 const Busuanzi = dynamic(() => import('@/components/Busuanzi'), { ssr: false })
